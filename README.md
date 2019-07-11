@@ -1,3 +1,6 @@
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/43165b92337441dfbfc1d81f1a06ae7f)](https://app.codacy.com/app/LandenStephenss/xCubed?utm_source=github.com&utm_medium=referral&utm_content=LandenStephenss/xCubed&utm_campaign=Badge_Grade_Dashboard)
+
 K5 is an itteration of K3 (and K4) but this is the final version.
 
 If you are running windows you can simply run `run.bat`, To run the bot, You must have [PM2](https://www.npmjs.com/package/pm2) or [Node](https://nodejs.org/en/) installed
