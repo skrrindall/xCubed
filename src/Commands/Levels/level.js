@@ -1,0 +1,24 @@
+const { RichEmbed } = require('discord.js')
+module.exports = {
+      Triggers: ['level', 'rank', 'points'],
+      Description: 'See how many points you have',
+      Category: 'levels',
+      Permissions: {
+        User: [],
+        Bot: ['SEND_MESSAGES']
+      },
+      Options: {
+        Dev: false,
+        NSFW: false,
+      },
+      Run: async (client, message, paramaters) => {
+            const user = message.mentions.members.first() || message.member
+            const Embed = new RichEmbed()
+            .setColor('RED')
+            .setTitle(`${user.user.tag}'s points!`)
+            .addField('Level', Math.floor(.09 * Math.sqrt(client.Points.get(user.id, 'points'))), true)
+            .addField('Points', client.Points.get(message.author.id).points, true)
+            message.channel.send(Embed)
+
+      }
+    }

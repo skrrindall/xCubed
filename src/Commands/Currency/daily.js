@@ -1,0 +1,34 @@
+const { RichEmbed } = require('discord.js')
+module.exports = {
+      Triggers: ['daily', 'dailycoins'],
+      Description: 'Claim your daily credits',
+      Category: 'currency',
+      Permissions: {
+        User: [],
+        Bot: ['SEND_MESSAGES']
+      },
+      Options: {
+        Dev: false,
+        NSFW: false,
+      },
+      Run: async (client, message, paramaters) => {
+            client.Credits.ensure(message.author.id, {
+                  Wallet: 500, Bank: 0, SecSys: false, lastUsed: null
+            })
+            if(message.createdTimestamp - client.Credits.get(message.author.id).lastUsed >= 86400000) {
+                  client.Credits.set(message.author.id, {
+                        Wallet: client.Credits.get(message.author.id).Wallet + 250,
+                        Bank: client.Credits.get(message.author.id).Bank,
+                        lastUsed: message.createdTimestamp,
+                        SecSys: client.Credits.get(message.author.id).SecSys
+                  })
+                  const Embed = new RichEmbed()
+                  .setColor('RED')
+                  .addField('You have claimed your daily 250 credits!', 'Your balance is now ' + client.Credits.get(message.author.id).Wallet)
+                  message.channel.send(Embed)
+            } else {
+                  message.channel.send('You must wait 24 hours to do that!')
+            }
+            
+      }
+    }

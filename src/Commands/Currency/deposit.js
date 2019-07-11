@@ -1,0 +1,46 @@
+const { NoArguments } = require('../../Configurations/Errors')
+const { RichEmbed } = require('discord.js')
+module.exports = {
+      Triggers: ['deposit'],
+      Description: 'Put money in the bank',
+      Category: 'currency',
+      Permissions: {
+        User: [],
+        Bot: ['SEND_MESSAGES']
+      },
+      Options: {
+        Dev: false,
+        NSFW: false,
+      },
+      Run: async (client, message, paramaters) => {
+       if(paramaters.length === 0) {
+             message.channel.send(NoArguments)
+       } else if(client.Credits.get(message.author.id).Wallet - parseInt(paramaters[0]) < 0) {
+             message.channel.send('You do not have enough credits for that!')
+       } else if(paramaters[0].toLowerCase() === 'all') {
+             const Embed = new RichEmbed()
+             .setTitle('Success!')
+             .addField('New Balance', client.Credits.get(message.author.id).Bank + client.Credits.get(message.author.id).Wallet)
+             .setColor('RED')
+             message.channel.send(Embed)
+             client.Credits.set(message.author.id, {
+                   Wallet: 0,
+                   Bank: client.Credits.get(message.author.id).Bank + client.Credits.get(message.author.id).Wallet,
+                   SecSys: client.Credits.get(message.author.id).SecSys,
+                   lastUsed: client.Credits.get(message.author.id).lastUsed
+             })
+       } else {
+             const Embed = new RichEmbed()
+             .setTitle('Success!')
+             .addField('New Balance', client.Credits.get(message.author.id).Bank + parseInt(paramaters[0]))
+             .setColor('RED')
+            message.channel.send(Embed)
+            client.Credits.set(message.author.id, {
+                  Wallet: client.Credits.get(message.author.id).Wallet - parseInt(paramaters[0]),
+                  Bank: client.Credits.get(message.author.id).Bank + parseInt(paramaters[0]),
+                  SecSys: client.Credits.get(message.author.id).SecSys,
+                  lastUsed: client.Credits.get(message.author.id).lastUsed
+            })
+       }
+      }
+    }
