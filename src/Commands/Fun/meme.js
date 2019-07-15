@@ -19,7 +19,6 @@ module.exports = {
                   var image = content[0].data.children[0].data.url;
                   var ups = content[0].data.children[0].data.ups
                   var downs = content[0].data.children[0].data.downs
-                  console.log(content[0].data.children[0].data)
                   const sent = new RichEmbed()
                     .setTitle(title)
                     .setImage(image)

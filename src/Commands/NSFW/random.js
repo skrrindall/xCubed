@@ -3,7 +3,7 @@ const request = require('node-fetch')
 const fs = require('fs')
 const { RichEmbed } = require('discord.js')
 module.exports = {
-      Triggers: ['randomnsfw', 'porn'],
+      Triggers: ['random', 'randomnsfw', 'porn'],
       Description: 'Check out some NSFW',
       Category: 'nsfw',
       Permissions: {
@@ -12,7 +12,7 @@ module.exports = {
       },
       Options: {
         Dev: false,
-        NSFW: false,
+        NSFW: true,
       },
       Run: async (client, message, paramaters) => {
             random('nsfw_hd').then((url) => {

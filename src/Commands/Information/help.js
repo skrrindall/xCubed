@@ -24,8 +24,12 @@ module.exports = {
             if(owner.includes(message.author.id)) {
                   Embed.addField('Developer', `\`${client.commands.filter(f => f.Options.Dev === true).map(f => f.Triggers[0]).join('\`, \`')}\``)
             }
+            if(message.member.hasPermission('ADMINISTRATOR')) {
             Embed.addField('Settings', `\`${client.commands.filter(f => f.Category === 'settings').map(f => f.Triggers[0]).join('\`, \`')}\``)
+            }
+            if(message.member.hasPermission('KICK_MEMBERS')) {
             Embed.addField('Moderation', `\`${client.commands.filter(f => f.Category === 'moderation').map(f => f.Triggers[0]).join('\`, \`')}\``)
+            }
             Embed.addField('Information', `\`${client.commands.filter(f => f.Category === 'information').map(f => f.Triggers[0]).join('\`, \`')}\``)
             Embed.addField('Fun', `\`${client.commands.filter(f => f.Category === 'fun').map(f => f.Triggers[0]).join('\`, \`')}\``)
             Embed.addField('Level', `\`${client.commands.filter(f => f.Category === 'levels').map(f => f.Triggers[0]).join('\`, \`')}\``)

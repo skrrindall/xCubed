@@ -4,6 +4,9 @@ const {
     } = require('../../Configurations/Config.json')
     module.exports = (message) => {
       if (message.author.bot) return
+      if(message.channel.type === 'dm' && message.content.startsWith(prefix)) {
+        return message.channel.send('Hey! Please only use my commands in servers.')
+      }
       const client = message.client;
       const key = message.author.id
       client.Prefix.ensure(message.guild.id, {
