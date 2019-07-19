@@ -10,6 +10,10 @@ module.exports = {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+          Enabled: false,
+          Time: 0
+        },
       },
       Run: async (client, message, paramaters) => {
             const user = message.mentions.members.first() || message.guild.members.find(f => f.user.username.toLowerCase() === paramaters[0]) || message.member

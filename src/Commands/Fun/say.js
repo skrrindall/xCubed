@@ -12,6 +12,10 @@ const {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+          Enabled: false,
+          Time: 0
+        },
       },
       Run: async (client, message, paramaters) => {
         if (paramaters.includes('@everyone') || paramaters.includes('@here')) {

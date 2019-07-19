@@ -10,6 +10,10 @@ module.exports = {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+          Enabled: true,
+          Time: 15000
+        },
       },
       Run: async (client, message, paramaters) => { 
       message.channel.send(makeBoxLetter(paramaters.join(" ")))

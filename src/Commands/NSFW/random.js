@@ -13,6 +13,10 @@ module.exports = {
       Options: {
         Dev: false,
         NSFW: true,
+        Cooldown: {
+          Enabled: false,
+          Time: 0
+        },
       },
       Run: async (client, message, paramaters) => {
             random('nsfw_hd').then((url) => {

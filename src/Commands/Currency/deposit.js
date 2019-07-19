@@ -1,7 +1,7 @@
 const { NoArguments } = require('../../Configurations/Errors')
 const { RichEmbed } = require('discord.js')
 module.exports = {
-      Triggers: ['deposit'],
+      Triggers: ['deposit', 'dep', 'depo'],
       Description: 'Put money in the bank',
       Category: 'currency',
       Permissions: {
@@ -11,6 +11,10 @@ module.exports = {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+            Enabled: false,
+            Time: 0
+          },
       },
       Run: async (client, message, paramaters) => {
        if(paramaters.length === 0) {

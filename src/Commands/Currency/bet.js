@@ -15,13 +15,12 @@ const {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+          Enabled: true,
+          Time: 30000
+        },
       },
       Run: async (client, message, paramaters) => {
-            client.Credits.ensure(message.author.id, {
-                  Wallet: 500, Bank: 0, SecSys: false, lastUsed: null
-            })
-
-
         let bet = parseInt(paramaters[0])
         if (!paramaters[0] || isNaN(paramaters[0]) || bet < 0) {
           return message.channel.send(NoArguments)
@@ -37,6 +36,7 @@ const {
           embed.addField('Bet', bet, true)
           embed.setColor('RED')
           embed.addField('Won', bet * 2, true)
+          .setFooter('If the number is even you win, If the number is odd you lose!')
           message.channel.send(embed)
           client.Credits.set(message.author.id, {
             Wallet: (client.Credits.get(message.author.id).Wallet - bet) + (bet * 2),
@@ -51,6 +51,7 @@ const {
           embed.addField('Bet', bet, true)
           embed.setColor('RED')
           embed.addField('Lost', bet, true)
+          .setFooter('If the number is even you win, If the number is odd you lose!')
           message.channel.send(embed)
           client.Credits.set(message.author.id, {
             Wallet: client.Credits.get(message.author.id).Wallet - (bet),

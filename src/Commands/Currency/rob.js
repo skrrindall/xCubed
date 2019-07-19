@@ -11,6 +11,10 @@ module.exports = {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+            Enabled: false,
+            Time: 0
+          },
       },
       Run: async (client, message, paramaters) => {
             const user = message.mentions.members.first()
@@ -21,24 +25,14 @@ module.exports = {
             } else if(user.id === message.author.id) {
                   message.channel.send(`You cant rob yourself!`)
                   return
-            } 
-            const key = user.id
-            client.Credits.ensure(key, {
-                  Wallet: 500,
-                  Bank: 0,
-                  lastUsed: null,
-                  SecSys: false
-              })
-            
+            }           
             if(client.Credits.get(user.id).Wallet <= 500) {
                   message.channel.send(`This user does not have enough credits`)
             } else {
                   const amountTaken = Math.floor(Math.random() * 500)
                   const robChance = Math.random() * 1
             
-            if(client.Credits.get(key).SecSys === true) {
-                  message.channel.send(`This user has a **Security System** and you were caught!`)
-            } else if(robChance > .5) {
+         if(robChance > .5) {
                   const robbed = new RichEmbed() 
                   .setTitle(`Success!`)
                   .setColor('RED')

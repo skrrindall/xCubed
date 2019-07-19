@@ -9,7 +9,11 @@ module.exports = {
       },
       Options: {
         Dev: false,
-        NSFW: false,
+		NSFW: false,
+		Cooldown: {
+			Enabled: false,
+			Time: 0
+		  },
       },
       Run: async (client, message, paramaters) => {
             let region = message.guild.region

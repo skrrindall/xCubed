@@ -11,6 +11,10 @@ module.exports = {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+          Enabled: false,
+          Time: 0
+        },
       },
       Run: async (client, message, paramaters) => {
             const responses = ['It is certain', 'Without a doubt', 'You may rely on it', 'Yes, definitely', 'As i see it, yes', 'Most likely', 'Yes', 'The outlook is good', 'Signs point to yes', 'Reply hazy, try again', 'Better not tell you now', 'Ask again later', 'Cannot predict now', 'Dont count on it', 'Outlook not so good', 'My sources say no', 'Very doubtful', 'My reply is no']

@@ -1,0 +1,38 @@
+{
+  "name": "xcubed",
+  "version": "1.1.2",
+  "description": "xCubed is a discord bot",
+  "main": "index.js",
+  "dependencies": {
+    "better-sqlite3": "^5.4.0",
+    "discord.js": "^11.5.1",
+    "enmap": "^5.0.0",
+    "got": "^9.6.0",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.3.2",
+    "node-fetch": "^2.6.0",
+    "node-gyp": "^5.0.2",
+    "node-opus": "^0.3.2",
+    "random-puppy": "^1.1.0",
+    "yt-search": "^0.4.1",
+    "ytdl-core": "^0.29.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LandenStephenss/xCubed.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Olykir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LandenStephenss/xCubed/issues"
+  },
+  "homepage": "https://github.com/LandenStephenss/xCubed#readme"
+}

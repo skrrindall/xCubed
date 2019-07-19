@@ -11,6 +11,10 @@ module.exports = {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+          Enabled: false,
+          Time: 0
+        },
       },
       Run: async (client, message, paramaters) => {
             const user = message.mentions.members.first() || message.guild.members.get(paramaters[0])

@@ -3,7 +3,7 @@ const { RichEmbed } = require('discord.js')
 module.exports = {
       Triggers: ['pay', 'givemoney'],
       Description: 'Pay someone',
-      Category: 'fun',
+      Category: 'currency',
       Permissions: {
         User: [],
         Bot: ['SEND_MESSAGES']
@@ -11,6 +11,10 @@ module.exports = {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+            Enabled: false,
+            Time: 0
+          },
       },
       Run: async (client, message, paramaters) => {
             const user = message.mentions.members.first()

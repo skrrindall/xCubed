@@ -10,11 +10,12 @@ module.exports = {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+            Enabled: false,
+            Time: 0
+          },
       },
       Run: async (client, message, paramaters) => {
-            client.Credits.ensure(message.author.id, {
-                  Wallet: 500, Bank: 0, SecSys: false, lastUsed: null
-            })
             const user = message.mentions.members.first() || message.member
             const Balance = new RichEmbed()
             .setTitle(`${user.user.tag}'s balance!`)

@@ -10,6 +10,10 @@ module.exports = {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+            Enabled: false,
+            Time: 0
+          },
       },
       Run: async (client, message, paramaters) => {
             if(!paramaters[0]) return message.channel.send(errors.MissingArgs)

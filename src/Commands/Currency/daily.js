@@ -10,11 +10,12 @@ module.exports = {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+            Enabled: false,
+            Time: 0
+          },
       },
       Run: async (client, message, paramaters) => {
-            client.Credits.ensure(message.author.id, {
-                  Wallet: 500, Bank: 0, SecSys: false, lastUsed: null
-            })
             if(message.createdTimestamp - client.Credits.get(message.author.id).lastUsed >= 86400000) {
                   client.Credits.set(message.author.id, {
                         Wallet: client.Credits.get(message.author.id).Wallet + 250,

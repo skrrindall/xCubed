@@ -2,6 +2,9 @@ const {
       owner,
       prefix
     } = require('../../Configurations/Config.json')
+const {
+      RichEmbed
+} = require('discord.js')
     module.exports = (message) => {
       if (message.author.bot) return
       if(message.channel.type === 'dm' && message.content.startsWith(prefix)) {
@@ -17,6 +20,10 @@ const {
         points: 0,
         level: 0,
       })
+      client.Credits.ensure(key, {
+        balance: 500,
+        lastUsed: null,
+    })
       const currentLevel = Math.floor(.09 * Math.sqrt(client.Points.get(key, 'points')))
       client.Points.set(key, {
         points: client.Points.get(key).points + Math.floor(Math.random() * 8),
@@ -36,12 +43,13 @@ const {
         else if (CMD.Options.Dev === true && !owner.includes(message.author.id)) {
           message.channel.send('You do not have the correct permissions to use that!')
         }
-        else if (CMD.Options.NSFW === true) {
-          message.channel.send('You can\'t use **__NSFW__** commands outside of an NSFW channel')
+        else if (CMD.Options.NSFW === true && message.channel.nsfw === false) {
+          return message.channel.send('You can\'t use **__NSFW__** commands outside of an NSFW channel')
         }
         else {
-          client.commandsUsed++
+          client.commandsUsed ++;
           CMD.Run(client, message, Paramaters)
+          }
         }
       }
-    }
+    

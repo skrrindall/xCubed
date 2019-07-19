@@ -9,7 +9,11 @@ module.exports = {
       },
       Options: {
         Dev: true,
-        NSFW: false,
+		NSFW: false,
+		Cooldown: {
+            Enabled: false,
+            Time: 0
+          },
       },
       Run: async (client, message, paramaters) => {
 				const msg = message

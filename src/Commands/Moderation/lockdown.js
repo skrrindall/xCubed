@@ -9,6 +9,10 @@ module.exports = {
       Options: {
         Dev: false,
         NSFW: false,
+        Cooldown: {
+            Enabled: false,
+            Time: 0
+          },
       },
       Run: async (client, message, paramaters) => {
             if(message.channel.permissionsFor(message.guild.id).has("SEND_MESSAGES")) {

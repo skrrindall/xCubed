@@ -11,6 +11,10 @@ module.exports = {
     Options: {
       Dev: true,
       NSFW: false,
+      Cooldown: {
+        Enabled: false,
+        Time: 0
+      },
     },
     Run: async (client, message, paramaters) => {
         const Stats = new RichEmbed()
