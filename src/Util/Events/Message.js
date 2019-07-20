@@ -5,6 +5,8 @@ const {
 const {
       RichEmbed
 } = require('discord.js')
+const NoXP4U = new Set();
+const NoCMD = new Set()
     module.exports = (message) => {
       if (message.author.bot) return
       if(message.channel.type === 'dm' && message.content.startsWith(prefix)) {
@@ -25,10 +27,16 @@ const {
         lastUsed: null,
     })
       const currentLevel = Math.floor(.09 * Math.sqrt(client.Points.get(key, 'points')))
+      if(!NoXP4U.has(message.author.id)) {
+        NoXP4U.add(message.author.id)
       client.Points.set(key, {
         points: client.Points.get(key).points + Math.floor(Math.random() * 8),
         level: currentLevel
       })
+      setTimeout(() => {
+        NoXP4U.delete(message.author.id)
+      }, 60000)
+    }
       if (!message.content.startsWith(client.Prefix.get(message.guild.id).prefix)) return;
       const Command = message.content.split(" ")[0].slice(client.Prefix.get(message.guild.id).prefix.length).toLowerCase();
       const Paramaters = message.content.split(" ").slice(1)
@@ -47,8 +55,20 @@ const {
           return message.channel.send('You can\'t use **__NSFW__** commands outside of an NSFW channel')
         }
         else {
-          client.commandsUsed ++;
-          CMD.Run(client, message, Paramaters)
+          if(!NoCMD.has(message.author.id)) {
+            NoCMD.add(message.author.id)
+            setTimeout(() => {
+              NoCMD.delete(message.author.id)
+            }, 3000)
+            client.commandsUsed ++;
+            CMD.Run(client, message, Paramaters)
+          } else {
+            const Embed = new RichEmbed()
+            .setTitle('Woah! Theres a cooldown for that.')
+            .setDescription('To prevent spam there is a **3** second cooldown on all commands!')
+            .setColor('RED')
+            message.channel.send(Embed)
+          }
           }
         }
       }

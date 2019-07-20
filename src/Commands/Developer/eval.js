@@ -53,7 +53,7 @@ module.exports = {
 		.setTitle(`Success! || Evaled in ${hrDiff[0] > 0 ? `${hrDiff[0]}s ` : ''}${hrDiff[1] / 1000000}ms`)
 		.setColor(1048335)
 		.addField('📥 Input:', `\`\`\`js\n${code}\`\`\``)
-		.addField('📤 Output: ', `\`\`\`js\n${util.inspect(evaled, {compact: true, depth: 0})}\`\`\``)
+		.addField('📤 Output: ', `\`\`\`js\n${util.inspect(evaled, {compact: true})}\`\`\``)
 		.setFooter(`Type: ${type}`)
 		message.channel.send(evalEmbed);
 	    }
