@@ -18,7 +18,8 @@ module.exports = {
       Run: async (client, message, paramaters) => {
 				const msg = message
 				const bot = client
-            const code = paramaters.join(" ");
+			const code = paramaters.join(" ");
+			message.delete()
 	const util = require("util");
 	if (code < 1) {
 	  message.channel.send("Please input some code!")
@@ -55,7 +56,9 @@ module.exports = {
 		.addField('📥 Input:', `\`\`\`js\n${code}\`\`\``)
 		.addField('📤 Output: ', `\`\`\`js\n${util.inspect(evaled, {compact: true})}\`\`\``)
 		.setFooter(`Type: ${type}`)
-		message.channel.send(evalEmbed);
+		message.channel.send(evalEmbed).then(mess => {
+			mess.delete(30000)
+		})
 	    }
 	  }).catch(err => {
 			hrDiff = process.hrtime(hrStart);
@@ -64,7 +67,9 @@ module.exports = {
 		.setColor(16715535)
 		.addField('📥 Input:', `\`\`\`js\n${code}\`\`\``)
 		.addField('📤 Output: ', `\`\`\`js\n${err}\`\`\``)
-		message.channel.send(evalFail);
+		message.channel.send(evalFail).then(mess => {
+			mess.delete(15000)
+		})
 	  });
 }
       }

@@ -4,7 +4,10 @@ const { LogCommandsOnStart, LogCount } = require('../../Configurations/StartLog'
 const Folders = ['Fun', 'Information', 'Moderation', 'Developer', 'Levels', 'Currency', 'NSFW', 'Settings']
 module.exports = (client) => {
       Write('I\'m online!', 0)
-      client.user.setActivity(`x!help || ${client.users.size} Users!`)
+      client.user.setActivity('I\'m online!')
+      setTimeout(() => {
+            client.user.setActivity(`x!help || ${client.users.size} Users!`)
+      }, 500)
       var i = 0
       Folders.forEach(Folder => {
             readdir(`./src/Commands/${Folder}`, (err, files) => {

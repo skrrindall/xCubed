@@ -15,6 +15,6 @@ module.exports = {
         },
       },
       Run: async (client, message, paramaters) => {
-            message.channel.send('Here you go! https://xcubed.xyz **Note: If it says the website is unsafe, its not**')
+            message.channel.send('Here you go! http://xcubed.xyz **Note: If it says the website is unsafe, its not**')
       }
     }

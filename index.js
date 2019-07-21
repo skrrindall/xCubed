@@ -30,3 +30,6 @@ client.HowGay = new Enmap({
 client.Inv = new Enmap({
     name: 'Inv'
 })
+client.DankRate = new Enmap({
+    name: 'DankRate'
+})

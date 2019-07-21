@@ -26,7 +26,8 @@ const NoCMD = new Set()
         balance: 500,
         lastUsed: null,
     })
-      const currentLevel = Math.floor(.09 * Math.sqrt(client.Points.get(key, 'points')))
+      let currentLevel = Math.floor(.15 * Math.sqrt(client.Points.get(key, 'points')))
+      if(Number(currentLevel) >= 99) currentLevel = 99
       if(!NoXP4U.has(message.author.id)) {
         NoXP4U.add(message.author.id)
       client.Points.set(key, {
@@ -57,9 +58,11 @@ const NoCMD = new Set()
         else {
           if(!NoCMD.has(message.author.id)) {
             NoCMD.add(message.author.id)
+          //  if(!owners.includes(message.author.id)) {
             setTimeout(() => {
               NoCMD.delete(message.author.id)
             }, 3000)
+         // }
             client.commandsUsed ++;
             CMD.Run(client, message, Paramaters)
           } else {

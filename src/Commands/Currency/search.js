@@ -1,6 +1,6 @@
 const { RichEmbed } = require('discord.js')
 module.exports = {
-    Triggers: ['search', 'look', 'scavenge'],
+    Triggers: ['search', 'look', 'scavenge', 'beg'],
     Description: 'Search for some coins',
     Category: 'currency',
     Permissions: {

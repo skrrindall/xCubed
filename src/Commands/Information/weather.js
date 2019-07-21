@@ -24,6 +24,7 @@ if(!location) {
       return message.channel.send(NoArguments)
 } else if(location.toLowerCase().includes('-c')) { 
       type = 'C'
+      location.slice("-c")
 } else if(location.toLowerCase().includes('-f')) { 
       type = 'F'
 } 
