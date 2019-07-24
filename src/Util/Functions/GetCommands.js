@@ -1,4 +1,6 @@
-const { readdir } = require('fs')
+const {
+      readdir
+} = require('fs')
 const getCommands = (folder) => {
       const commands = []
       readdir(folder, (err, files) => {

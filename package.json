@@ -1,6 +1,6 @@
 {
   "name": "xcubed",
-  "version": "1.1.2",
+  "version": "1.2.2",
   "description": "xCubed is a discord bot",
   "main": "index.js",
   "dependencies": {

@@ -1,10 +1,15 @@
-const discord = require('discord.js')
-const client = new discord.Client({
+const {
+    Client,
+    on,
+    login,
+    Collection
+} = require('discord.js')
+const client = new Client({
     fetchMembers: true
 })
 client.login(require('./src/Configurations/Config.json').token)
-client.triggers = new discord.Collection()
-client.commands = new discord.Collection()
+client.triggers = new Collection()
+client.commands = new Collection()
 client.commandsUsed = 0
 client.queue = new Map()
 require('./src/Util/Misc/EventLoadingHandler.js')(client)

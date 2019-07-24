@@ -1,50 +1,60 @@
-const { NoArguments } = require('../../Configurations/Errors')
-const { RichEmbed } = require('discord.js')
+const {
+      NoArguments
+} = require('../../Configurations/Errors')
+const {
+      RichEmbed
+} = require('discord.js')
 module.exports = {
       Triggers: ['withdraw', 'with'],
       Description: 'Take money from the bank',
       Category: 'currency',
       Permissions: {
-        User: [],
-        Bot: ['SEND_MESSAGES']
+            User: [],
+            Bot: ['SEND_MESSAGES']
       },
       Options: {
-        Dev: false,
-        NSFW: false,
-        Cooldown: {
-            Enabled: false,
-            Time: 0
-          },
+            Dev: false,
+            NSFW: false,
+            Cooldown: {
+                  Enabled: false,
+                  Time: 0
+            },
       },
       Run: async (client, message, paramaters) => {
-       if(paramaters.length === 0) {
-             message.channel.send(NoArguments)
-       } else if(client.Credits.get(message.author.id).Bank - parseInt(paramaters[0]) < 0) {
-             message.channel.send('You do not have enough credits for that!')
-       } else if(paramaters[0].toLowerCase() === 'all') {
-             const Embed = new RichEmbed()
-             .setTitle('Success!')
-             .addField('New Balance', client.Credits.get(message.author.id).Wallet + client.Credits.get(message.author.id).Wallet)
-             .setColor('RED')
-             message.channel.send(Embed)
-             client.Credits.set(message.author.id, {
-                   Wallet: client.Credits.get(message.author.id).Bank + client.Credits.get(message.author.id).Wallet,
-                   Bank: 0,
-                   SecSys: client.Credits.get(message.author.id).SecSys,
-                   lastUsed: client.Credits.get(message.author.id).lastUsed
-             })
-       } else {
-             const Embed = new RichEmbed()
-             .setTitle('Success!')
-             .addField('New Balance', client.Credits.get(message.author.id).Wallet + parseInt(paramaters[0]))
-             .setColor('RED')
-            message.channel.send(Embed)
-            client.Credits.set(message.author.id, {
-                  Wallet: client.Credits.get(message.author.id).Wallet + parseInt(paramaters[0]),
-                  Bank: client.Credits.get(message.author.id).Bank - parseInt(paramaters[0]),
-                  SecSys: client.Credits.get(message.author.id).SecSys,
-                  lastUsed: client.Credits.get(message.author.id).lastUsed
+            client.Credits.ensure(message.author.id, {
+                  Wallet: 500,
+                  lastUsed: null,
+                  Bank: 0,
+                  SecSys: false
             })
-       }
+            if (paramaters.length === 0) {
+                  message.channel.send(NoArguments)
+            } else if (client.Credits.get(message.author.id).Bank - parseInt(paramaters[0]) < 0) {
+                  message.channel.send('You do not have enough credits for that!')
+            } else if (paramaters[0].toLowerCase() === 'all') {
+                  const Embed = new RichEmbed()
+                        .setTitle('Success!')
+                        .addField('New Balance', client.Credits.get(message.author.id).Wallet + client.Credits.get(message.author.id).Wallet)
+                        .setColor('RED')
+                  message.channel.send(Embed)
+                  client.Credits.set(message.author.id, {
+                        Wallet: client.Credits.get(message.author.id).Bank + client.Credits.get(message.author.id).Wallet,
+                        Bank: 0,
+                        SecSys: client.Credits.get(message.author.id).SecSys,
+                        lastUsed: client.Credits.get(message.author.id).lastUsed
+                  })
+            } else {
+                  const Embed = new RichEmbed()
+                        .setTitle('Success!')
+                        .addField('New Balance', client.Credits.get(message.author.id).Wallet + parseInt(paramaters[0]))
+                        .setColor('RED')
+                  message.channel.send(Embed)
+                  client.Credits.set(message.author.id, {
+                        Wallet: client.Credits.get(message.author.id).Wallet + parseInt(paramaters[0]),
+                        Bank: client.Credits.get(message.author.id).Bank - parseInt(paramaters[0]),
+                        SecSys: client.Credits.get(message.author.id).SecSys,
+                        lastUsed: client.Credits.get(message.author.id).lastUsed
+                  })
+            }
       }
-    }
+}
