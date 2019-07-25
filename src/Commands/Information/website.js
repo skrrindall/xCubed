@@ -1,5 +1,5 @@
 module.exports = {
-  Triggers: ['website'],
+  Triggers: ['website', 'site'],
   Description: 'Check out our website (The Website is not done yet and is due for an update)',
   Category: 'information',
   Permissions: {

@@ -33,17 +33,17 @@ module.exports = {
         Embed.addField('Developer', `\`${client.commands.filter(f => f.Options.Dev === true).map(f => f.Triggers[0]).join('\`, \`')}\``)
       }
       if (message.member.hasPermission('ADMINISTRATOR')) {
-        Embed.addField('Settings', `\`${client.commands.filter(f => f.Category === 'settings').map(f => f.Triggers[0]).join('\`, \`')}\``)
+        Embed.addField('Settings', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'settings').map(f => f.Triggers[0]).join('\`, \`')}\``)
       }
       if (message.member.hasPermission('KICK_MEMBERS')) {
-        Embed.addField('Moderation', `\`${client.commands.filter(f => f.Category === 'moderation').map(f => f.Triggers[0]).join('\`, \`')}\``)
+        Embed.addField('Moderation', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'moderation').map(f => f.Triggers[0]).join('\`, \`')}\``)
       }
-      Embed.addField('Information', `\`${client.commands.filter(f => f.Category === 'information').map(f => f.Triggers[0]).join('\`, \`')}\``)
-      Embed.addField('Fun', `\`${client.commands.filter(f => f.Category === 'fun').map(f => f.Triggers[0]).join('\`, \`')}\``)
-      Embed.addField('Level', `\`${client.commands.filter(f => f.Category === 'levels').map(f => f.Triggers[0]).join('\`, \`')}\``)
-      Embed.addField('Currency', `\`${client.commands.filter(f => f.Category === 'currency').map(f => f.Triggers[0]).join('\`, \`')}\``)
+      Embed.addField('Information', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'information').map(f => f.Triggers[0]).join('\`, \`')}\``)
+      Embed.addField('Fun', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'fun').map(f => f.Triggers[0]).join('\`, \`')}\``)
+      Embed.addField('Level', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'levels').map(f => f.Triggers[0]).join('\`, \`')}\``)
+      Embed.addField('Currency', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'currency').map(f => f.Triggers[0]).join('\`, \`')}\``)
       if (message.channel.nsfw) {
-        Embed.addField('NSFW', `\`${client.commands.filter(f => f.Category === 'nsfw').map(f => f.Triggers[0]).join('\`, \`')}\``)
+        Embed.addField('NSFW', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'nsfw').map(f => f.Triggers[0]).join('\`, \`')}\``)
       }
       message.channel.send(Embed)
     } else if (paramaters[0] === 'all' && paramaters[1] === 'triggers') {
