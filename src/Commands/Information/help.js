@@ -4,7 +4,7 @@ const {
 const {
   owner
 } = require('../../Configurations/Config.json')
-const GetCommands = require('../../Util/Functions/GetCommands')
+const firstUpper = require('../../Util/Functions/firstUpper')
 module.exports = {
   Triggers: ['help', '?', 'h'],
   Description: 'View some of the bots commands!',
@@ -56,7 +56,7 @@ module.exports = {
     } else if (client.triggers.has(paramaters[0])) {
       const cmd = client.triggers.get(paramaters[0])
       const Embed = new RichEmbed()
-        .setTitle(cmd.Triggers[0])
+        .setTitle(firstUpper(cmd.Triggers[0]))
         .setColor('#36393f')
         .addField('Description', cmd.Description)
         .addField('All triggers', `\`${cmd.Triggers.join(", ")}\``)
@@ -72,7 +72,7 @@ module.exports = {
     } else if (client.triggers.has(paramaters[0])) {
       const cmd = client.triggers.get(paramaters[0])
       const Embed = new RichEmbed()
-        .setTitle(cmd.Triggers[0])
+        .setTitle(firstUpper(cmd.Triggers[0]))
         .setColor('#36393f')
         .addField('Description', cmd.Description)
         .addField('All triggers', `\`${cmd.Triggers.join(", ")}\``)
