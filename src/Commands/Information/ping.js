@@ -16,6 +16,6 @@ module.exports = {
   },
   Run: async (client, message, paramaters) => {
     const pong = await message.channel.send('My ping is...')
-    pong.edit(`my ping is ${pong.createdTimestamp - message.createdTimestamp}ms`)
+    pong.edit(`My ping is ${pong.createdTimestamp - message.createdTimestamp}ms`)
   }
 }

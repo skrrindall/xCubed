@@ -4,9 +4,7 @@ const {
     login,
     Collection
 } = require('discord.js')
-const client = new Client({
-    fetchMembers: true
-})
+const client = new Client()
 client.login(require('./src/Configurations/Config.json').token)
 client.triggers = new Collection()
 client.commands = new Collection()

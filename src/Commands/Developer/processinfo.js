@@ -4,6 +4,8 @@ const {
 const {
   version
 } = require('../../../package')
+const moment = require('moment')
+require('moment-duration-format')
 module.exports = {
   Triggers: ['processinfo', 'process', 'processinformation', 'pi'],
   Description: 'View the process information',
@@ -21,12 +23,14 @@ module.exports = {
     },
   },
   Run: async (client, message, paramaters) => {
+    const servUp = moment.duration(require('os').uptime() * 1000).format("M [months], D [days], H [hours]");
     const Stats = new RichEmbed()
       .setTitle('Process Information')
       .setColor('#36393f')
       .addField('Home Dir (CWD)', process.cwd(), true)
       .addField('Node Version', process.version, true)
       .addField('Platform', `${process.platform} (${process.arch})`, true)
+      .addField('Server Uptime', servUp)
       .setFooter(`Package Version: ${version}`)
     message.channel.send(Stats)
 

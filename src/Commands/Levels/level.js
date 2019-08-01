@@ -23,7 +23,7 @@ module.exports = {
       .setColor('RED')
       .setTitle(`${user.user.tag}'s points!`)
       .addField('Level', Math.floor(.09 * Math.sqrt(client.Points.get(user.id, 'points'))), true)
-      .addField('Points', client.Points.get(message.author.id).points, true)
+      .addField('Points', client.Points.get(user.id).points, true)
     message.channel.send(Embed)
 
   }

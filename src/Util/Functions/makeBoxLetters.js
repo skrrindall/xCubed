@@ -1,4 +1,3 @@
-
 function makeBoxLetter(word) {
       const boxWords = []
       word.split("").forEach(f => {
@@ -26,7 +25,7 @@ function makeBoxLetter(word) {
                   } else if (f === '9') {
                         boxWords.push(':nine:')
                   }
-            } else if(f.match(/[a-z]/i)) {
+            } else if (f.match(/[a-z]/i)) {
                   boxWords.push(`:regional_indicator_${f}:`)
             } else {
                   boxWords.push(f)

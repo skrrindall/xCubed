@@ -29,9 +29,9 @@ module.exports = {
     const Balance = new RichEmbed()
       .setTitle(`${user.user.tag}'s balance!`)
       .setColor("RED")
-      .addField('Wallet', client.Credits.get(message.author.id).Wallet, true)
-      .addField('Bank', client.Credits.get(message.author.id).Bank, true)
-    if (client.Credits.get(message.author.id).SecSys === true) {
+      .addField('Wallet', client.Credits.get(user.id).Wallet, true)
+      .addField('Bank', client.Credits.get(user.id).Bank, true)
+    if (client.Credits.get(user.id).SecSys === true) {
       Balance.setFooter('You have a security system!')
     }
     message.channel.send(Balance)

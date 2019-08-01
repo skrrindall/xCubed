@@ -9,7 +9,7 @@ const NoXP4U = new Set();
 const NoCMD = new Set()
 module.exports = (message) => {
   if (message.author.bot) return
-  if (message.channel.type === 'dm' && message.content.startsWith(prefix)) {
+  if (message.channel.type === 'dm' && message.content.startsWith(prefix.toLowerCase())) {
     return message.channel.send('Hey! Please only use my commands in servers.')
   }
   const client = message.client;
@@ -40,7 +40,7 @@ module.exports = (message) => {
       NoXP4U.delete(message.author.id)
     }, 60000)
   }
-  if (!message.content.startsWith(client.Prefix.get(message.guild.id).prefix)) return;
+  if (!message.content.startsWith(client.Prefix.get(message.guild.id).prefix.toLowerCase())) return;
   const Command = message.content.split(" ")[0].slice(client.Prefix.get(message.guild.id).prefix.length).toLowerCase();
   const Paramaters = message.content.split(" ").slice(1)
   if (client.triggers.has(Command)) {

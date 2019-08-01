@@ -2,7 +2,7 @@ const {
   RichEmbed
 } = require('discord.js')
 module.exports = {
-  Triggers: ['avatar', 'pfp', 'icon'],
+  Triggers: ['avatar', 'pfp', 'icon', 'av'],
   Description: 'View someones avatar',
   Category: 'information',
   Permissions: {

@@ -30,20 +30,20 @@ module.exports = {
         .setFooter(`${message.guild.name}'s Prefix is ${client.Prefix.get(message.guild.id).prefix}`)
         .setColor('#36393f')
       if (owner.includes(message.author.id)) {
-        Embed.addField('Developer', `\`${client.commands.filter(f => f.Options.Dev === true).map(f => f.Triggers[0]).join('\`, \`')}\``)
+        Embed.addField('Developer', `\`${client.commands.filter(f => f.Options.Dev === true).map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
       }
       if (message.member.hasPermission('ADMINISTRATOR')) {
-        Embed.addField('Settings', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'settings').map(f => f.Triggers[0]).join('\`, \`')}\``)
+        Embed.addField('Settings', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'settings').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
       }
       if (message.member.hasPermission('KICK_MEMBERS')) {
-        Embed.addField('Moderation', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'moderation').map(f => f.Triggers[0]).join('\`, \`')}\``)
+        Embed.addField('Moderation', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'moderation').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
       }
-      Embed.addField('Information', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'information').map(f => f.Triggers[0]).join('\`, \`')}\``)
-      Embed.addField('Fun', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'fun').map(f => f.Triggers[0]).join('\`, \`')}\``)
-      Embed.addField('Level', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'levels').map(f => f.Triggers[0]).join('\`, \`')}\``)
-      Embed.addField('Currency', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'currency').map(f => f.Triggers[0]).join('\`, \`')}\``)
+      Embed.addField('Information', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'information').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
+      Embed.addField('Fun', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'fun').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
+      Embed.addField('Level', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'levels').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
+      Embed.addField('Currency', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'currency').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
       if (message.channel.nsfw) {
-        Embed.addField('NSFW', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'nsfw').map(f => f.Triggers[0]).join('\`, \`')}\``)
+        Embed.addField('NSFW', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'nsfw').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
       }
       message.channel.send(Embed)
     } else if (paramaters[0] === 'all' && paramaters[1] === 'triggers') {
@@ -56,10 +56,10 @@ module.exports = {
     } else if (client.triggers.has(paramaters[0])) {
       const cmd = client.triggers.get(paramaters[0])
       const Embed = new RichEmbed()
-        .setTitle(firstUpper(cmd.Triggers[0]))
+      .setTitle(firstUpper(paramaters[0].toLowerCase()))
         .setColor('#36393f')
         .addField('Description', cmd.Description)
-        .addField('All triggers', `\`${cmd.Triggers.join(", ")}\``)
+        .addField('All triggers', `\`${cmd.Triggers.sort().join(", ")}\``)
         .setFooter(`${message.guild.name}'s prefix: ${client.Prefix.get(message.guild.id).prefix}`)
       message.channel.send(Embed)
     } else if (paramaters[0] === 'all') {
@@ -72,7 +72,7 @@ module.exports = {
     } else if (client.triggers.has(paramaters[0])) {
       const cmd = client.triggers.get(paramaters[0])
       const Embed = new RichEmbed()
-        .setTitle(firstUpper(cmd.Triggers[0]))
+        .setTitle(firstUpper(paramaters[0].toLowerCase()))
         .setColor('#36393f')
         .addField('Description', cmd.Description)
         .addField('All triggers', `\`${cmd.Triggers.join(", ")}\``)
