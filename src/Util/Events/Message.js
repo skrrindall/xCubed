@@ -64,8 +64,13 @@ module.exports = (message) => {
         }, 3000)
         // }
         client.commandsUsed++;
-        CMD.Run(client, message, Paramaters)
-      } else {
+        try {
+          CMD.Run(client, message, Paramaters)
+        } catch(e) {
+          message.channel.send('It looks like there was an error! Try again later.')
+          console.error(e)
+        }
+        } else {
         const Embed = new RichEmbed()
           .setTitle('Woah! There\'s a cooldown for that.')
           .setDescription('To prevent spam there is a **3** second cooldown on all commands!')
