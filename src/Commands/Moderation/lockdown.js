@@ -1,6 +1,6 @@
 module.exports = {
       Triggers: ['lockdown', 'ld'],
-      Description: '',
+      Description: 'Locks down the current channel.',
       Category: '',
       Permissions: {
             User: [],
