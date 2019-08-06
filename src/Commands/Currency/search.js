@@ -33,7 +33,9 @@ module.exports = {
       Embed.setTitle(`You found ${coinAmount} coins by ${wayOfFinding[Math.floor(Math.random() * wayOfFinding.length)]}`).setColor("RED")
       client.Credits.set(message.author.id, {
         Wallet: client.Credits.get(message.author.id).Wallet + coinAmount,
-        Bank: client.Credits.get(message.author.id).Bank
+        Bank: client.Credits.get(message.author.id).Bank,
+        lastUsed: client.Credits.get(message.author.id).lastUsed,
+        secSys: client.Credits.get(message.author.id).lastUsed
       })
       message.channel.send(Embed)
     } else {
