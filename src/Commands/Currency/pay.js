@@ -48,7 +48,7 @@ module.exports = {
             }
             if (user.user.bot === true) {
                   message.channel.send('You can\'t pay a bot!')
-            } else if (client.Credits.get(message.author.id).balance - amount < 0) {
+            } else if (client.Credits.get(message.author.id).Wallet - amount < 0) {
                   message.channel.send(`You do not have enough money to do that!`)
                   return
             } else if (amount < 100) {

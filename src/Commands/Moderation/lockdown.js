@@ -1,9 +1,9 @@
 module.exports = {
       Triggers: ['lockdown', 'ld'],
-      Description: '',
-      Category: '',
+      Description: 'Lock down a channel',
+      Category: 'moderation',
       Permissions: {
-            User: [],
+            User: ['MANAGE_SERVER'],
             Bot: ['SEND_MESSAGES']
       },
       Options: {
