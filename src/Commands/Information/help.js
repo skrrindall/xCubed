@@ -58,9 +58,9 @@ module.exports = {
       const Embed = new RichEmbed()
       .setTitle(firstUpper(paramaters[0].toLowerCase()))
         .setColor('#36393f')
-        .addField('Description', cmd.Description)
+        .addField('Description', cmd.Description.length === 0 ? 'None' : cmd.Description)
         .addField('All triggers', `\`${cmd.Triggers.sort().join(", ")}\``)
-        .setFooter(`${message.guild.name}'s prefix: ${client.Prefix.get(message.guild.id).prefix}`)
+        .setFooter(`${message.guild.name}'s prefix: ${client.Prefix.get(message.guild.id).prefix} || ${firstUpper(cmd.Category)}`)
       message.channel.send(Embed)
     } else if (paramaters[0] === 'all') {
       const Embed = new RichEmbed()
@@ -68,15 +68,6 @@ module.exports = {
         .setDescription(`\`${client.commands.filter(f => f.Options.Dev === false).map(f => f.Triggers[0]).join("\`, \`")}\``)
         .setFooter(`${client.commands.size} Commands`)
         .setColor('#36393f')
-      message.channel.send(Embed)
-    } else if (client.triggers.has(paramaters[0])) {
-      const cmd = client.triggers.get(paramaters[0])
-      const Embed = new RichEmbed()
-        .setTitle(firstUpper(paramaters[0].toLowerCase()))
-        .setColor('#36393f')
-        .addField('Description', cmd.Description)
-        .addField('All triggers', `\`${cmd.Triggers.join(", ")}\``)
-        .setDes(`${message.guild.name}'s prefix: ${client.Prefix.get(message.guild.id).prefix}`)
       message.channel.send(Embed)
     } else {
       message.channel.send('I cannot find that command!')
