@@ -5,7 +5,11 @@ const {
     Collection
 } = require('discord.js')
 const client = new Client()
-client.login(require('./src/Configurations/Config.json').token)
+try {
+    client.login(require('./src/Configurations/Config.json').token)
+} catch(e) {    
+    require('./src/Util/Functions/Write')('Invalid Bot Token', 2)
+}
 client.triggers = new Collection()
 client.commands = new Collection()
 client.commandsUsed = 0

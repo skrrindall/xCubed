@@ -30,20 +30,21 @@ module.exports = {
         .setFooter(`${message.guild.name}'s Prefix is ${client.Prefix.get(message.guild.id).prefix}`)
         .setColor('#36393f')
       if (owner.includes(message.author.id)) {
-        Embed.addField('Developer', `\`${client.commands.filter(f => f.Options.Dev === true).map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
+        Embed.addField('🎛 Developer', `\`${client.commands.filter(f => f.Options.Dev === true).map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
       }
       if (message.member.hasPermission('ADMINISTRATOR')) {
-        Embed.addField('Settings', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'settings').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
+        Embed.addField('⚙ Settings', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'settings').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
       }
       if (message.member.hasPermission('KICK_MEMBERS')) {
-        Embed.addField('Moderation', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'moderation').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
+        Embed.addField('🛠 Moderation', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'moderation').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
       }
-      Embed.addField('Information', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'information').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
-      Embed.addField('Fun', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'fun').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
-      Embed.addField('Level', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'levels').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
-      Embed.addField('Currency', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'currency').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
+      Embed.addField('📕 Information', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'information').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
+      Embed.addField('😂 Fun', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'fun').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
+      Embed.addField('📸 Images', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'images').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
+      Embed.addField('🎚 Level', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'levels').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
+      Embed.addField('💰 Currency', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'currency').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
       if (message.channel.nsfw) {
-        Embed.addField('NSFW', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'nsfw').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
+        Embed.addField('🔞 NSFW', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'nsfw').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
       }
       message.channel.send(Embed)
     } else if (paramaters[0] === 'all' && paramaters[1] === 'triggers') {

@@ -10,7 +10,7 @@ const {
 const {
       DBLToken
 } = require('../../Configurations/Config')
-const Folders = ['Fun', 'Information', 'Moderation', 'Developer', 'Levels', 'NSFW', 'Settings', 'Currency']
+const Folders = ['Fun', 'Information', 'Moderation', 'Developer', 'Levels', 'NSFW', 'Settings', 'Currency', 'Images']
 module.exports = async (client) => {
       client.user.setActivity('I\'m online!')
       setTimeout(() => {
