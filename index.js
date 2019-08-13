@@ -5,11 +5,7 @@ const {
     Collection
 } = require('discord.js')
 const client = new Client()
-try {
-    client.login(require('./src/Configurations/Config.json').token)
-} catch(e) {    
-    require('./src/Util/Functions/Write')('Invalid Bot Token', 2)
-}
+client.login(require('./src/Configurations/Config.json').token)
 client.triggers = new Collection()
 client.commands = new Collection()
 client.commandsUsed = 0
@@ -28,14 +24,8 @@ client.Credits = new Enmap({
 client.PP = new Enmap({
     name: 'PP'
 })
-client.Warnings = new Enmap({
-    name: 'Warnings'
-})
 client.HowGay = new Enmap({
     name: 'HowGay'
-})
-client.Inv = new Enmap({
-    name: 'Inv'
 })
 client.DankRate = new Enmap({
     name: 'DankRate'

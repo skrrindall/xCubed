@@ -21,7 +21,7 @@ module.exports = {
             },
       },
       Run: async (client, message, paramaters) => {
-            const user = message.mentions.members.first()
+            const user = message.mentions.members.first() || message.member
             client.Credits.ensure(message.author.id, {
                   Wallet: 500,
                   lastUsed: null,
@@ -37,14 +37,21 @@ module.exports = {
 
 
             if (!user) {
-                  message.channel.send(NoArguments)
-                  return
+                  return message.channel.send(NoArguments)
             } else if (user.id === message.author.id) {
                   message.channel.send(`You cant rob yourself!`)
                   return
-            }
-            if (client.Credits.get(user.id).Wallet <= 500) {
+            } else 
+                  if (client.Credits.get(user.id).Wallet <= 500) {
                   message.channel.send(`This user does not have enough credits`)
+            } else if(client.Credits.get(user.id).SecSys === true) {
+                  message.channel.send(`You broke through ${user.user.tag}'s Security System but got nothing`)
+                  client.Credits.set(user.id, {
+                        Bank: client.Credits.get(user.id).Bank,
+                        Wallet: client.Credits.get(user.id).Wallet,
+                        lastUsed: client.Credits.get(user.id).lastUsed,
+                        SecSys: false
+                  })
             } else {
                   const amountTaken = Math.floor(Math.random() * 500)
                   const robChance = Math.random() * 1
