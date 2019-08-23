@@ -40,6 +40,7 @@ module.exports = {
                         .addField("User Count!", `${role.members.size} users!`, true)
                         .addField("Created On", `${role.createdAt.toLocaleString().split(', ')[0]}`, true)
                         .addField('Role ID', role.id, true)
+                        .addField('Color', role.color)
                         .addField('Special Permissions', specials.length > 0 ? specials.join(', ') : 'None', true)
                   message.channel.send(embed);
 
