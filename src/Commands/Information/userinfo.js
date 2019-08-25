@@ -58,12 +58,14 @@ module.exports = {
       lastMessage = `[Jump To](https://discordapp.com/channels/${msg.guild.id}/${msg.channel.id}/${member.lastMessage.id})`
     }
 
+
     const embed = new RichEmbed()
       .setColor('RED')
+      .setAuthor(`${member.user.tag}(${member.id})`, `${member.user.displayAvatarURL}`)
       .setThumbnail(`${member.user.displayAvatarURL}`)
-      .setAuthor(`${member.user.tag} (${member.id})`, `${member.user.displayAvatarURL}`)
       .addField("Nickname", `${member.nickname !== null ? `${member.nickname}` : "No nickname"}`, true)
-      .addField("Bot?", `${bot}`, true).addField("Status", `${status[member.user.presence.status]}`, true)
+      .addField("Bot?", `${bot}`, true)
+      .addField("Status", `${status[member.user.presence.status]}`, true)
       .addField(`${playing}`, `${member.user.presence.game ? `${member.user.presence.game.name}`: "None!"}`, true)
       .addField("Roles", `${member.roles.size}`, true)
       .addField("Last Message", `${lastMessage}`, true)

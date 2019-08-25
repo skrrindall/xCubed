@@ -28,7 +28,7 @@ module.exports = (message) => {
     Bank: 0,
     SecSys: false
   })
-  let currentLevel = Math.floor(.15 * Math.sqrt(client.Points.get(key, 'points')))
+  let currentLevel = Math.floor(client.Points.get(message.author.id).Points / 100)
   if (Number(currentLevel) >= 99) currentLevel = 99
   if (!NoXP4U.has(message.author.id)) {
     NoXP4U.add(message.author.id)
@@ -38,7 +38,7 @@ module.exports = (message) => {
     })
     setTimeout(() => {
       NoXP4U.delete(message.author.id)
-    }, 60000)
+    }, 15000)
   }
   if (!message.content.startsWith(client.Prefix.get(message.guild.id).prefix.toLowerCase())) return;
   const Command = message.content.split(" ")[0].slice(client.Prefix.get(message.guild.id).prefix.length).toLowerCase();
