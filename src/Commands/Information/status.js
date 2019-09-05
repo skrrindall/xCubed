@@ -21,7 +21,7 @@ module.exports = {
   },
   Run: async (client, message, paramaters) => {
 
-    const duration = moment.duration(client.uptime).format(" D [days], H [hours], m [minutes]");
+    const duration = moment.duration(Math.floor(process.uptime()) * 1000).format(" D [days], H [hours], m [minutes]");
 
     const embed = new RichEmbed()
       .setColor('#36393f')
