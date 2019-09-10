@@ -28,7 +28,7 @@ module.exports = (message) => {
     Bank: 0,
     SecSys: false
   })
-  let currentLevel = Math.floor(client.Points.get(message.author.id).Points / 100)
+  let currentLevel = Math.floor(client.Points.get(message.author.id).points / 100)
   if (Number(currentLevel) >= 99) currentLevel = 99
   if (!NoXP4U.has(message.author.id)) {
     NoXP4U.add(message.author.id)
