@@ -33,6 +33,7 @@ module.exports = (message) => {
   if (!NoXP4U.has(message.author.id)) {
     NoXP4U.add(message.author.id)
     client.Points.set(key, {
+      user: message.author.id,
       points: client.Points.get(key).points + Math.floor(Math.random() * 8),
       level: currentLevel
     })
