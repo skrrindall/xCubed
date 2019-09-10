@@ -24,7 +24,7 @@ module.exports = {
     const duration = moment.duration(Math.floor(process.uptime()) * 1000).format(" D [days], H [hours], m [minutes]");
 
     const embed = new RichEmbed()
-      .setColor('#36393f')
+      .setColor('RED')
       .setTitle(`Bot's status!`)
       .addField("Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true)
       .addField("Commands Used", `${client.commandsUsed}`, true)
