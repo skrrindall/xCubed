@@ -26,10 +26,10 @@ module.exports = {
     const embed = new RichEmbed()
       .setColor('#36393f')
       .setTitle(`Bot's status!`)
-      .addField("Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB`, true)
+      .addField("Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true)
       .addField("Commands Used", `${client.commandsUsed}`, true)
       .addField("Uptime", `${duration}`, true)
-      .addField("Users", `${client.users.size - 1}`, true)
+      .addField("Users", `${(client.users.size - 1) / 1000} K`, true)
       .addField(`Servers`, `${client.guilds.size.toLocaleString()}`, true)
       .addField(`Channels`, `${client.channels.size.toLocaleString()}`, true)
     message.channel.send(embed);
