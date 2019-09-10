@@ -27,7 +27,7 @@ module.exports = {
       .setTitle(`Global Points Leaderboard!`);
       
       for(const data of top10) {
-        embed.addField(client.users.get(data.user).tag, `${data.points} points (level ${data.level})`);
+        Embed.addField(client.users.get(data.user).tag, `${data.points} points (level ${data.level})`);
       }
       
     message.channel.send(Embed)
