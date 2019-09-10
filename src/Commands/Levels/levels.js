@@ -19,7 +19,7 @@ module.exports = {
   },
   Run: async (client, message, paramaters) => {
     const user = message.mentions.members.first() || message.member
-    const filter = client.Points.filter( p => p.user === message.author.id ).array()
+    const filtered = client.Points.filter( p => p.user === message.author.id ).array()
     const sort = filtered.sort((a, b) => b.points - a.points)
     const top10 = sort.splice(0, 10)
     const Embed = new RichEmbed()
