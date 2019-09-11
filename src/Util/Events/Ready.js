@@ -14,7 +14,7 @@ const Folders = ['Fun', 'Information', 'Moderation', 'Developer', 'Levels', 'NSF
 module.exports = async (client) => {
       client.user.setActivity('I\'m online!')
       setTimeout(() => {
-            client.user.setActivity(`x!help || ${client.users.size} Users!`)
+            client.user.setActivity(`x!help`)
       }, 500)
       var i = 0
       Folders.forEach(Folder => {
