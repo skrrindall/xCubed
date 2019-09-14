@@ -22,7 +22,7 @@ module.exports = {
     const Embed = new RichEmbed()
       .setColor('RED')
       .setTitle(`${user.user.tag}'s points!`)
-      .addField('Level', Math.floor(.09 * Math.sqrt(client.Points.get(user.id, 'points'))), true)
+      .addField('Level', Math.floor(Math.sqrt(client.Points.get(user.id, 'points') / 100)), true)
       .addField('Points', client.Points.get(user.id).points, true)
     message.channel.send(Embed)
 
