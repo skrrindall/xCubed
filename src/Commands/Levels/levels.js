@@ -2,7 +2,7 @@ const {
   RichEmbed
 } = require('discord.js')
 module.exports = {
-  Triggers: ['levels', 'lb', 'leaderboard', 'lvls'],
+  Triggers: ['leaderboard', 'levels', 'lb','lvls'],
   Description: 'Leaderboard for levels',
   Category: 'levels',
   Permissions: {
