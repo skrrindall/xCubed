@@ -19,7 +19,7 @@ module.exports = {
         const linkEmbed = new RichEmbed()
         .setTitle('Useful Links:')
         .addField('Invite', `[Click Here](https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=268545094)`, true)
-        .addField('Support', '[Click Here](https://discord.gg/h9aDqsW)', true)
+        .addField('Support', '[Click Here](https://discord.gg/kQUpSgw)', true)
         .addField('Website', '[Click Here](https://xcubed.xyz)', true)
         .addField('Source', '[Click Here](https://xcubed.xyz/github)', true)
         .setColor('#36393f')
