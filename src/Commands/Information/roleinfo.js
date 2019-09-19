@@ -33,7 +33,7 @@ module.exports = {
             } if(role.serialize().SEND_TTS_MESSAGES) {
                   specials.push('TTS')
             } 
-            try {
+            if (role) {
                   const embed = new RichEmbed()
                         .setColor(role.color)
                         .setAuthor(role.name, message.guild.iconURL)
@@ -44,7 +44,7 @@ module.exports = {
                         .addField('Special Permissions', specials.length > 0 ? specials.join(', ') : 'None', true)
                   message.channel.send(embed);
 
-            } catch (err) {
+            } else {
                   message.channel.send(`I cannot find that role!`)
             }
       }
