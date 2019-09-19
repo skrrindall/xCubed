@@ -18,9 +18,9 @@ module.exports = {
   Run: async (client, message, paramaters) => {
     message.channel.send('Restarting! (Restart will happen in 500ms)')
     client.user.setActivity('Restarting...')
-    Write('Restarting in 500MS', 1)
+    Write('Restarting in 250MS', 1)
     setTimeout(() => {
       process.exit()
-    }, 500)
+    }, 250)
   }
 }
