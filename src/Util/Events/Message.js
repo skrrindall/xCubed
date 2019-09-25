@@ -72,6 +72,7 @@ module.exports = (message) => {
           console.error(e)
         }
         } else {
+          client.commandsUsed++;
         const Embed = new RichEmbed()
           .setTitle('Woah! There\'s a cooldown for that.')
           .setDescription('To prevent spam there is a **3** second cooldown on all commands!')
