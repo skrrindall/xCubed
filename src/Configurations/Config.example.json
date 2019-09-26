@@ -1,6 +1,5 @@
 {
       "token": "token",
       "prefix": "x!",
-      "owner": [],
-      "DBLToken" : ""
+      "owner": []
 }
