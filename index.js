@@ -1,6 +1,5 @@
 const {
     Client,
-    on,
     login,
     Collection
 } = require('discord.js')
