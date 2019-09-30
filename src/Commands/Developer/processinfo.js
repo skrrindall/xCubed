@@ -34,7 +34,7 @@ module.exports = {
       .addField('Node Version', process.version, true)
       .addField('Platform', `${process.platform} (${process.arch})`, true)
       .addField('Server Uptime', servUp)
-      readdir('./node_modules', (err, files) => { Stats.addField('Modules', `${files.length}`, true)
+      readdir('./node_modules', (err, files) => { Stats.addField('Modules', `${files.length}`, true) } )
       Stats.setFooter(`Package Version: ${version}`)
     message.channel.send(Stats)
 
