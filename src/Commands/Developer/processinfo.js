@@ -25,7 +25,6 @@ module.exports = {
       Time: 0
     },
   },
-  const { err, files } = readdir('./node_modules')
   Run: async (client, message, paramaters) => {
     const servUp = moment.duration(require('os').uptime() * 1000).format("M [months], D [days], H [hours]");
     const Stats = new RichEmbed()
