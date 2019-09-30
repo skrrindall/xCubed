@@ -4,6 +4,9 @@ const {
 const {
   version
 } = require('../../../package')
+const {
+  readdir
+} = require('fs');
 const moment = require('moment')
 require('moment-duration-format')
 module.exports = {
@@ -22,6 +25,7 @@ module.exports = {
       Time: 0
     },
   },
+  const { err, files } = readdir('./node_modules')
   Run: async (client, message, paramaters) => {
     const servUp = moment.duration(require('os').uptime() * 1000).format("M [months], D [days], H [hours]");
     const Stats = new RichEmbed()
@@ -31,7 +35,8 @@ module.exports = {
       .addField('Node Version', process.version, true)
       .addField('Platform', `${process.platform} (${process.arch})`, true)
       .addField('Server Uptime', servUp)
-      .setFooter(`Package Version: ${version}`)
+      readdir('./node_modules', (err, files) => { Stats.addField('Modules', `${files.length}`, true)
+      Stats.setFooter(`Package Version: ${version}`)
     message.channel.send(Stats)
 
   }
