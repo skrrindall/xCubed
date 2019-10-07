@@ -3,6 +3,7 @@ module.exports = {
     Triggers: ['roles', 'severroles', 'sr'],
     Description: 'View all the roles in a server',
     Category: 'information',
+    Usage: '{c}',
     Permissions: {
       User: [],
       Bot: ['SEND_MESSAGES']
