@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['lmgtfy', 'google', 'letmegooglethatforyou'],
   Description: 'Let me google that for you',
   Category: 'fun',
+  Usage: '{c} [search]',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
