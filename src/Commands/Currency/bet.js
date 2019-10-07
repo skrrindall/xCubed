@@ -8,6 +8,7 @@ module.exports = {
   Triggers: ['bet', 'risk'],
   Description: 'Risk some credits',
   Category: 'currency',
+  Usage: '{c} [bet]',
   Permissions: {
     User: [],
     Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
