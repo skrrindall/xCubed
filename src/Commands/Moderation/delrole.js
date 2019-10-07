@@ -2,6 +2,7 @@ module.exports = {
   Triggers: ['delrole', 'removerole', 'takerole'],
   Description: 'Remove someones role',
   Category: 'moderation',
+  Usage: '{c} [user] [role]',
   Permissions: {
     User: ['MANAGE_ROLES'],
     Bot: ['MANAGE_ROLES', 'SEND_MESSAGES']
