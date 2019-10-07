@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['search', 'look', 'scavenge', 'beg'],
   Description: 'Search for some coins',
   Category: 'currency',
+  Usage: '{c}',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
