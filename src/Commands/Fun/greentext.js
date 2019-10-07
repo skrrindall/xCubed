@@ -5,6 +5,7 @@ module.exports = {
     Triggers: ['greentext', 'gt', 'green'],
     Description: 'Make your text green',
     Category: 'fun',
+    Usage: '{c} [text]',
     Permissions: {
       User: [],
       Bot: ['SEND_MESSAGES']
