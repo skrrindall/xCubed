@@ -9,6 +9,7 @@ module.exports = {
   Triggers: ['urban', 'urbandictionary', 'urbandict'],
   Description: 'Check the dictionary',
   Category: 'nsfw',
+  Usage: '{c} [term]',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
