@@ -2,8 +2,9 @@ const shop = require('../../Configurations/Shop')
 const { RichEmbed } = require('discord.js')
 module.exports = {
     Triggers: ['shop', 'store'],
-    Description: 'currency',
-    Category: '',
+    Description: 'View a list of items in the shop',
+    Category: 'currency',
+    Usage: '{c}',
     Permissions: {
       User: [],
       Bot: ['SEND_MESSAGES']
