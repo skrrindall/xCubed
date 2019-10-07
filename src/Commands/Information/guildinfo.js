@@ -5,6 +5,7 @@ module.exports = {
 	Triggers: ['guildinfo', 'serverinfo'],
 	Description: 'View the servers information',
 	Category: 'information',
+	Usage: '{c}',
 	Permissions: {
 		User: [],
 		Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
