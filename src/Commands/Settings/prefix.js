@@ -5,6 +5,7 @@ module.exports = {
       Triggers: ['prefix', 'setprefix'],
       Description: 'Set the bots prefix',
       Category: 'settings',
+      Usage: '{c} [prefix]',
       Permissions: {
             User: ['ADMINISTRATOR'],
             Bot: ['SEND_MESSAGES']
