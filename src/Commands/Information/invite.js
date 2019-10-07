@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['invite', 'inv'],
   Description: 'Invite the bot',
   Category: 'information',
+  Usage: '{c}',
   Permissions: {
     User: [],
     Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
