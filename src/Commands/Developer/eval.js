@@ -5,6 +5,7 @@ module.exports = {
 	Triggers: ['eval', 'code', 'run'],
 	Description: 'Run some code',
 	Category: 'developer',
+	Usage: '{c} [code]',
 	Permissions: {
 		User: [],
 		Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
