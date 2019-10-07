@@ -3,6 +3,7 @@ module.exports = {
   Triggers: ['bob'],
   Description: 'marley',
   Category: 'fun',
+  Usage: '{c}',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
