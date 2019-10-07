@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['purge', 'clean', 'bulkdelete'],
   Description: 'Delete X messages in a channel',
   Category: 'moderation',
+  Usage: '{c} [amount]',
   Permissions: {
     User: ['MANAGE_MESSAGES'],
     Bot: ['SEND_MESSAGES', 'MANAGE_MESSAGES']
