@@ -9,6 +9,7 @@ module.exports = {
   Triggers: ['help', '?', 'h'],
   Description: 'View some of the bots commands!',
   Category: 'information',
+  Usage: '{c} [command]',
   Permissions: {
     User: [],
     Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
@@ -61,7 +62,7 @@ module.exports = {
         .setColor('#36393f')
         .addField('Description', cmd.Description.length === 0 ? 'None' : cmd.Description)
         .addField('All triggers', `\`${cmd.Triggers.sort().join(", ")}\``)
-        .addField('Usage', `${cmd.Usage.replace('{c}', paramaters[0].toLowerCase()) || 'None given'}`)  
+        .addField('Usage', `x!${cmd.Usage.replace('{c}', paramaters[0].toLowerCase()) || 'None given'}`)  
       .setFooter(`${message.guild.name}'s prefix: ${client.Prefix.get(message.guild.id).prefix} || ${firstUpper(cmd.Category)}`)
       message.channel.send(Embed)
     } else if (paramaters[0] === 'all') {
