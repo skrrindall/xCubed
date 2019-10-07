@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['dankrate', 'dankness', 'dank', 'howdank'],
   Description: 'Just how dank are you?',
   Category: 'fun',
+  Usage: '{c} [user]',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
