@@ -13,6 +13,7 @@ module.exports = {
   Triggers: ['processinfo', 'process', 'processinformation', 'pi'],
   Description: 'View the process information',
   Category: 'developer',
+  Usage: '{c}',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
