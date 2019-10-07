@@ -4,6 +4,7 @@ module.exports = {
       Category: '',
       Description: 'Lock down a channel',
       Category: 'moderation',
+      Usage: '{c}',
       Permissions: {
             User: ['MANAGE_SERVER'],
             Bot: ['SEND_MESSAGES']
