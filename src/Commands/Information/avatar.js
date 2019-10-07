@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['avatar', 'pfp', 'icon', 'av'],
   Description: 'View someones avatar',
   Category: 'information',
+  Usage: '{c} [user]',
   Permissions: {
     User: [],
     Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
