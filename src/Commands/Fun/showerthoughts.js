@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['showerthoughts', 'showerthought'],
   Description: 'Find out some deep thoughts of the shower',
   Category: 'fun',
+  Usage: '{c}',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
