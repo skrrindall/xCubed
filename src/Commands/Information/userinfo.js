@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['userinfo', 'ui'],
   Description: 'View some of the users information',
   Category: 'information',
+  Usage: '{c} [user]',
   Permissions: {
     User: [],
     Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
