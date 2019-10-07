@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['addrole', 'giverole'],
   Description: 'Add a role to someone',
   Category: 'moderation',
+  Usage: '{c} [user] [role]',
   Permissions: {
     User: ['MANAGE_ROLES'],
     Bot: ['SEND_MESSAGES', 'MANAGE_ROLES']
