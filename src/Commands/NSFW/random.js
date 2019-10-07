@@ -8,6 +8,7 @@ module.exports = {
   Triggers: ['random', 'randomnsfw', 'porn'],
   Description: 'Check out some NSFW',
   Category: 'nsfw',
+  Usage: '{c}',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
