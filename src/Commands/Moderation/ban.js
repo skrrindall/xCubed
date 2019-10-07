@@ -9,6 +9,7 @@ module.exports = {
   Triggers: ['ban'],
   Description: 'Ban a user from your guild',
   Category: 'moderation',
+  Usage: '{c} [user]',
   Permissions: {
     User: ['BAN_MEMBERS'],
     Bot: ['SEND_MESSAGES', 'BAN_MEMBERS']
