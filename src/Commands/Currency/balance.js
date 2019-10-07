@@ -4,6 +4,7 @@ const {
 module.exports = {
   Triggers: ['balance', 'coins', 'credits', 'money', 'bal', 'wallet'],
   Description: 'View your balance',
+  Usage: '{c} [user]'
   Category: 'currency',
   Permissions: {
     User: [],
