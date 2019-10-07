@@ -2,6 +2,7 @@ module.exports = {
   Triggers: ['ping', 'pong'],
   Description: 'Check the bots ping',
   Category: 'information',
+  Usage: '{c}',
   Permissions: {
     User: [],
     Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
