@@ -8,6 +8,7 @@ module.exports = {
   Triggers: ['8ball', 'magic8'],
   Description: 'Roll the 8ball',
   Category: 'fun',
+  Usage: '{c} [question]',
   Permissions: {
     User: [],
     Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
