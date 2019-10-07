@@ -9,6 +9,7 @@ module.exports = {
       Triggers: ['weather'],
       Description: 'Check the weather',
       Category: 'information',
+      Usage: '{c} [location] [-c|-f]',
       Permissions: {
             User: [],
             Bot: ['SEND_MESSAGES']
