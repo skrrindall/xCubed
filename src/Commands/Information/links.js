@@ -1,6 +1,6 @@
 const { RichEmbed } = require('discord.js')
 module.exports = {
-    Triggers: ['links'],
+    Triggers: ['links', 'website'],
     Description: 'View all of the links related to xCubed',
     Category: 'information',
     Usage: '{c}',
