@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['pp', 'ppsize', 'dick', 'length'],
   Description: 'Check your pp',
   Category: 'fun',
+  Usage: '{c} [user]',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
