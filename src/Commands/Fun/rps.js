@@ -5,6 +5,7 @@ module.exports = {
       Triggers: ['rps'],
       Description: 'Play a game!',
       Category: 'fun',
+      Usage: '{c} [rock|paper|scissors]',
       Permissions: {
             User: [],
             Bot: ['SEND_MESSAGES']
