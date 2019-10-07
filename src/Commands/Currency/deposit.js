@@ -8,6 +8,7 @@ module.exports = {
       Triggers: ['deposit', 'dep', 'depo'],
       Description: 'Put money in the bank',
       Category: 'currency',
+      Usage: '{c} [amount]',
       Permissions: {
             User: [],
             Bot: ['SEND_MESSAGES']
