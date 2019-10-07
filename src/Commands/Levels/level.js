@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['level', 'rank', 'points', 'lvl'],
   Description: 'See how many points you have',
   Category: 'levels',
+  Usage: '{c} [user]',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
