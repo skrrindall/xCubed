@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['say', 'speak'],
   Description: 'Make the bot say something',
   Category: 'fun',
+  Usage: '{c} [text]',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
