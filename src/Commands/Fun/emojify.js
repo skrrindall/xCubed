@@ -6,6 +6,7 @@ module.exports = {
   Triggers: ['emojify', 'fancytext'],
   Description: 'Write in emojis',
   Category: 'fun',
+  Usage: '{c} [text]',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
