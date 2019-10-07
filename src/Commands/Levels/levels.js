@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['leaderboard', 'levels', 'lb','lvls'],
   Description: 'Leaderboard for levels',
   Category: 'levels',
+  Usage: '{c}',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
