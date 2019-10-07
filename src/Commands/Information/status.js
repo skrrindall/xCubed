@@ -7,6 +7,7 @@ module.exports = {
   Triggers: ['status', 'stats', 'uptime'],
   Description: 'Check the bots status',
   Category: 'information',
+  Usage: '{c}',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES', 'EMBED_LINKS']
