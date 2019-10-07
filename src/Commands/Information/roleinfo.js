@@ -5,6 +5,7 @@ module.exports = {
       Triggers: ['roleinfo'],
       Description: 'View a role\'s information',
       Category: 'information',
+      Usage: '{c} [role]',
       Permissions: {
             User: [],
             Bot: ['SEND_MESSAGES']
