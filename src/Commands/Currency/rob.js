@@ -8,6 +8,7 @@ module.exports = {
       Triggers: ['rob', 'steal'],
       Description: 'Steal some credits',
       Category: 'currency',
+      Usage: '{c} [user]',
       Permissions: {
             User: [],
             Bot: ['SEND_MESSAGES']
