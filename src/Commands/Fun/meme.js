@@ -6,6 +6,7 @@ module.exports = {
   Triggers: ['meme'],
   Description: 'See a funny',
   Category: 'fun',
+  Usage: '{c}',
   Permissions: {
     User: [],
     Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
