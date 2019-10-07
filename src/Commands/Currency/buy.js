@@ -4,6 +4,7 @@ module.exports = {
     Triggers: ['buy'],
     Description: 'Buy something from the shop',
     Category: 'currency',
+    Usage: '{c} [item] [amount]',
     Permissions: {
       User: [],
       Bot: ['SEND_MESSAGES']
