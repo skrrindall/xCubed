@@ -9,6 +9,7 @@ module.exports = {
   Triggers: ['kick'],
   Description: 'Kick a user from your guild',
   Category: 'moderation',
+  Usage: '{c} [user]',
   Permissions: {
     User: ['KICK_MEMBERS'],
     Bot: ['SEND_MESSAGES', 'KICK_MEMBERS']
