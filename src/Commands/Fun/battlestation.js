@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['battlestation', 'battlestations', 'bs'],
   Description: 'Check out some nice battle stations',
   Category: 'fun',
+  Usage: '{c}',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
