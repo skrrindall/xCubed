@@ -4,6 +4,7 @@ module.exports = {
     Triggers: ['dog', 'doge', 'doggo', 'showmethedogs', 'randomdog'],
     Description: 'View some cute doggys',
     Category: 'images',
+    Usage: '{c}',
     Permissions: {
       User: [],
       Bot: ['ATTACH_FILES', 'EMBED_LINKS', 'SEND_MESSAGES']
