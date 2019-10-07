@@ -3,6 +3,7 @@ module.exports = {
     Triggers: ['links'],
     Description: 'View all of the links related to xCubed',
     Category: 'information',
+    Usage: '{c}',
     Permissions: {
       User: [],
       Bot: ['SEND_MESSAGES', 'EMBED_LINKS']
