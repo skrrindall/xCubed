@@ -3,6 +3,7 @@ module.exports = {
   Triggers: ['restart', 'kys', 'fuckoff', 'r', 'reload', 'kysfag', 'kysfaggot'],
   Description: 'Restart the bot',
   Category: 'developer',
+  Usage: '{c}',
   Permissions: {
     User: [],
     Bot: ['SEND_MESSAGES']
