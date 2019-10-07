@@ -5,6 +5,7 @@ module.exports = {
   Triggers: ['discrim', 'discrims', 'discriminator'],
   Description: 'View others with your discriminator',
   Category: 'information',
+  Usage: '{c} [user]',
   Permissions: {
     User: [],
     Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
