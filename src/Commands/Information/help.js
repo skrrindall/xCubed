@@ -61,7 +61,7 @@ module.exports = {
         .setColor('#36393f')
         .addField('Description', cmd.Description.length === 0 ? 'None' : cmd.Description)
         .addField('All triggers', `\`${cmd.Triggers.sort().join(", ")}\``)
-        .addField('Usage', `${cmd.Usage.toString.replace('{c}', paramaters[0].toLowerCase()` || 'None given'})  
+        .addField('Usage', `${cmd.Usage.toString.replace('{c}', paramaters[0].toLowerCase() || 'None given'}`)  
       .setFooter(`${message.guild.name}'s prefix: ${client.Prefix.get(message.guild.id).prefix} || ${firstUpper(cmd.Category)}`)
       message.channel.send(Embed)
     } else if (paramaters[0] === 'all') {
