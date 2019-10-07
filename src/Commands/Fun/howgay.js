@@ -3,6 +3,7 @@ module.exports = {
       Triggers: ['howgay', 'gay'],
       Description: 'See how gay you are',
       Category: 'fun',
+      Usage: '{c} [user]',
       Permissions: {
         User: [],
         Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
