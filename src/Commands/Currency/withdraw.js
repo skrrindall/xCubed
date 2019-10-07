@@ -8,6 +8,7 @@ module.exports = {
       Triggers: ['withdraw', 'with'],
       Description: 'Take money from the bank',
       Category: 'currency',
+      Usage: '{c} [amount]',
       Permissions: {
             User: [],
             Bot: ['SEND_MESSAGES']
