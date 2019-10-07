@@ -5,6 +5,7 @@ module.exports = {
       Triggers: ['daily', 'dailycoins'],
       Description: 'Claim your daily credits',
       Category: 'currency',
+      Usage: '{c}',
       Permissions: {
             User: [],
             Bot: ['SEND_MESSAGES']
