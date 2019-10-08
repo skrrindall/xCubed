@@ -19,3 +19,9 @@ or
 ```bash
 pm2 start index.js --name xCubed
 ```
+
+# Changelog
+**10/7/2019 8:00p.m.**
+  - Added `Usage: '{c}'` to all commands
+  - Added a field for the usage in the help embed for a certain command
+  
