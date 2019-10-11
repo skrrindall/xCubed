@@ -19,6 +19,6 @@ module.exports = {
         if(!paramaters[0]) {
          message.channel.send(require('../../Configurations/Errors.json').NoArguments)   
         } else {
-        message.channel.send(message.cleanContent.split(' ').slice(0).join(' ').split('').reverse().join(''))
+        message.channel.send(paramaters.join(' ').split('').reverse().join(''))
     }}
   }
