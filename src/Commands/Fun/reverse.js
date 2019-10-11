@@ -16,6 +16,9 @@ module.exports = {
       },
     },
     Run: async (client, message, paramaters) => {
+        if(paramaters[0].length < 0) {
+         message.channel.send(require('../../Configurations/Errors.json').NoArguments)   
+        } else {
         message.channel.send(paramaters.join(' ').split('').reverse().join(''))
-    }
+    }}
   }
