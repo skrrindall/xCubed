@@ -17,7 +17,7 @@ module.exports = {
       },
     },
     Run: async (client, message, paramaters) => {
-      const res = [`You are the chosen one ${message.guild.members.random().tag}!`, `I choose ${message.guild.members.random().tag}.`]
+      const res = [`You are the chosen one ${message.guild.members.random().user.tag}!`, `I choose ${message.guild.members.random().user.tag}.`]
       message.channel.send(res[Math.floor(Math.random() * res.length)])
     }
   }
