@@ -6,6 +6,10 @@ xCubed is an itteration of K3 (and K4) but this is the final version.
 **Support**: N\A
 
 # Changelog
+**10/11/2019 1:28p.m.**
+  - Added `duck`
+  - Added `reverse`
+  - Added `owo`
 **10/10/2019 9:59p.m.**
   - Added `tuesday` and `randomuser` to the fun commands
   - Added command formatting and a developer section to `README.md`
