@@ -16,6 +16,6 @@ module.exports = {
       },
     },
     Run: async (client, message, paramaters) => {
-      message.channel.send(`Today **is${new Date().getDay() === 2 ? '' : ' not'}** Tuesday.`);
+      message.channel.send(`Today is${new Date().getDay() === 2 ? '' : ' not'} Tuesday.`);
     }
   }
