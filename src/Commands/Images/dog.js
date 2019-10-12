@@ -1,5 +1,6 @@
 const request = require('node-superfetch')
 const { RichEmbed } = require('discord.js')
+const res = ['Bark!', 'Doggy', 'Doggo', 'DOG!', 'Dog!', 'Woof Woof']
 module.exports = {
     Triggers: ['dog', 'doge', 'doggo', 'showmethedogs', 'randomdog'],
     Description: 'View some cute doggys',
@@ -21,7 +22,7 @@ module.exports = {
         const { body } = await request.get('https://dog.ceo/api/breeds/image/random')
         const Embed = new RichEmbed()
         .setColor('RED')
-        .setTitle('Here is your random dog!')
+        .setTitle(res[Math.floor(Math.random() * res.length)])
         .setImage(body.message)
         message.channel.send(Embed)
     }
