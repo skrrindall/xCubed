@@ -22,7 +22,7 @@ module.exports = {
         const { body } = await request.get(`http://aws.random.cat/meow`)
         const Embed = new RichEmbed()
         .setColor('RED')
-        .setTitle('Here is your random cat!')
+        .setTitle(res[Math.floor(Math.random() * res.length)])
         .setImage(body.file)
         message.channel.send(Embed)
     }
