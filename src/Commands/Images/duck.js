@@ -2,7 +2,7 @@ const request = require('node-superfetch');
 const { RichEmbed } = require('discord.js')
 const res =  ['Ducky!', 'Ducky :)', 'Quack', 'Quack Quack!']
 module.exports = {
-    Triggers: ['duck', 'ducky', 'randomduck', 'ducks'],
+    Triggers: ['duck', 'ducky', 'randomduck', 'ducks', 'quack'],
     Description: 'Quack!',
     Category: 'images',
     Usage: '{c}',
