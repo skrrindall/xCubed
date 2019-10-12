@@ -1,5 +1,6 @@
 const request = require('node-superfetch')
 const { RichEmbed } = require('discord.js')
+const res = ['Kat', 'Cat!', 'CAT!', 'Kitter', 'Catto', 'Litter of Kitters!']
 module.exports = {
     Triggers: ['cat', 'catto', 'kitter', 'randomcat'],
     Description: 'View some cute cats',
