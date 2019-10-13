@@ -23,8 +23,14 @@ module.exports = {
     console.log(top5)
         const Embed = new RichEmbed()
         .setColor('RED')
-        .addField(`🏆 ${message.guild.members.get(top5[0].ID).user.tag}`, `${top5[0].Wallet} Credits`)
+        if(top5[0]) {
+        Embed.addField(`🏆 ${message.guild.members.get(top5[0].ID).user.tag}`, `${top5[0].Wallet} Credits`)
         message.channel.send(Embed)
+        }
+         if(top5[1]) {
+        Embed.addField(`${message.guild.members.get(top5[0].ID).user.tag}`, `${top5[0].Wallet} Credits`)
+        message.channel.send(Embed)
+        }
     }
   }
 
