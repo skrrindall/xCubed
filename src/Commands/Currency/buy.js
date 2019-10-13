@@ -30,14 +30,14 @@ module.exports = {
                 return message.channel.send('You do not have enough credits for that')
             }
             message.channel.send('You bought a **Security System**')
-            client.Credits.set(message.author.id, {Wallet: client.Credits.get(message.author.id).Wallet - 5000, Bank: client.Credits.get(message.author.id).Bank, SecSys: true, lastUsed: client.Credits.get(message.author.id).lastUsed})
+            client.Credits.set(message.author.id, {ID: message.author.id, Wallet: client.Credits.get(message.author.id).Wallet - 5000, Bank: client.Credits.get(message.author.id).Bank, SecSys: true, lastUsed: client.Credits.get(message.author.id).lastUsed})
         } else if(item.toLowerCase() === 'enlarge') {
             if(client.Credits.get(message.author.id).Wallet - 1000 < 0) {
                 return message.channel.send('You do not have enough credits for that')
             }
             message.channel.send('You bought a **Penis Enlargment** pill')
             client.PP.set(message.author.id, {size: client.PP.get(message.author.id).size + 1})
-            client.Credits.set(message.author.id, {Wallet: client.Credits.get(message.author.id).Wallet - 1000, Bank: client.Credits.get(message.author.id).Bank, SecSys: client.Credits.get(message.author.id).SecSys, lastUsed: client.Credits.get(message.author.id).lastUsed})
+            client.Credits.set(message.author.id, { ID: message.author.id, Wallet: client.Credits.get(message.author.id).Wallet - 1000, Bank: client.Credits.get(message.author.id).Bank, SecSys: client.Credits.get(message.author.id).SecSys, lastUsed: client.Credits.get(message.author.id).lastUsed})
         }
     }
   }
