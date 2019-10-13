@@ -20,7 +20,7 @@ module.exports = {
     const filtered = client.Credits.filter( p => message.guild.members.has(p.ID)).array()
     const sort = filtered.sort((a, b) => b.Wallet - a.Wallet)
     const top5 = sort.splice(0, 5)
-    console.log(sort)
+    console.log(filtered)
         const Embed = new RichEmbed()
         .setColor('RED')
         if(top5[0]) {
