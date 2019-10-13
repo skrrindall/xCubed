@@ -20,6 +20,7 @@ module.exports = {
       },
       Run: async (client, message, paramaters) => {
             client.Credits.ensure(message.author.id, {
+                  ID: message.author.id,
                   Wallet: 500,
                   lastUsed: null,
                   Bank: 0,
@@ -27,6 +28,7 @@ module.exports = {
             })
             if (message.createdTimestamp - client.Credits.get(message.author.id).lastUsed >= 86400000) {
                   client.Credits.set(message.author.id, {
+                        ID: message.author.id,
                         Wallet: client.Credits.get(message.author.id).Wallet + 250,
                         Bank: client.Credits.get(message.author.id).Bank,
                         lastUsed: message.createdTimestamp,
