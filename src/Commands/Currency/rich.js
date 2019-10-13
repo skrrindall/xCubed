@@ -16,8 +16,7 @@ module.exports = {
       },
     },
     Run: async (client, message, paramaters) => {
-    const user = message.mentions.members.first() || message.member
-    const filtered = client.Credits.filter( p => message.guild.members.has(p.user)).array()
+    const filtered = client.Credits.filter( p => message.guild.members.has(p.ID)).array()
     const sort = filtered.sort((a, b) => b.Wallet - a.Wallet)
     const top5 = sort.splice(0, 5)
     console.log(top5)
