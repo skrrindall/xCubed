@@ -28,8 +28,11 @@ module.exports = {
       .setTitle(`Global Points Leaderboard!`);
       
       for(const data of top10) {
+        if(data.user === top10[0].user) {
+          Embed.addField(`🏆 ${client.users.get(data.user).tag}`, `${data.points} points (level ${data.level})`);
+        } else {
         Embed.addField(client.users.get(data.user).tag, `${data.points} points (level ${data.level})`);
-      }
+      }}
       
     message.channel.send(Embed)
 
