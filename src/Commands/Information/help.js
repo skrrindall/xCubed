@@ -47,6 +47,7 @@ module.exports = {
       if (message.channel.nsfw) {
         Embed.addField('🔞 NSFW', `\`${client.commands.filter(f => f.Category.toLowerCase() === 'nsfw').map(f => f.Triggers[0]).sort().join('\`, \`')}\``)
       }
+      Embed.setFooter(`Command of The Hour: ${client.commandOfTheHour.Triggers[0]}`)
       message.channel.send(Embed)
     } else if (paramaters[0] === 'all' && paramaters[1] === 'triggers') {
       const Embed = new RichEmbed()
