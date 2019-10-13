@@ -23,6 +23,7 @@ module.exports = (message) => {
     level: 0,
   })
   client.Credits.ensure(key, {
+    ID: key,
     Wallet: 500,
     lastUsed: null,
     Bank: 0,
