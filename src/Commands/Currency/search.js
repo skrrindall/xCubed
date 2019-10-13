@@ -20,6 +20,7 @@ module.exports = {
   },
   Run: async (client, message, paramaters) => {
     client.Credits.ensure(message.author.id, {
+      ID: message.author.id,
       Wallet: 500,
       lastUsed: null,
       Bank: 0,
@@ -33,6 +34,7 @@ module.exports = {
     if (ChanceOfDeath === 0) {
       Embed.setTitle(`You found ${coinAmount} coins by ${wayOfFinding[Math.floor(Math.random() * wayOfFinding.length)]}`).setColor("RED")
       client.Credits.set(message.author.id, {
+        ID: message.author.id,
         Wallet: client.Credits.get(message.author.id).Wallet + coinAmount,
         Bank: client.Credits.get(message.author.id).Bank,
         lastUsed: client.Credits.get(message.author.id).lastUsed,
