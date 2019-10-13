@@ -24,12 +24,14 @@ module.exports = {
       Run: async (client, message, paramaters) => {
             const user = message.mentions.members.first() || message.member
             client.Credits.ensure(message.author.id, {
+                  ID: message.author.id,
                   Wallet: 500,
                   lastUsed: null,
                   Bank: 0,
                   SecSys: false
             })
             client.Credits.ensure(user.id, {
+                  ID: message.author.id,
                   Wallet: 500,
                   lastUsed: null,
                   Bank: 0,
@@ -48,6 +50,7 @@ module.exports = {
             } else if(client.Credits.get(user.id).SecSys === true) {
                   message.channel.send(`You broke through ${user.user.tag}'s Security System but got nothing`)
                   client.Credits.set(user.id, {
+                        ID: message.author.id,
                         Bank: client.Credits.get(user.id).Bank,
                         Wallet: client.Credits.get(user.id).Wallet,
                         lastUsed: client.Credits.get(user.id).lastUsed,
@@ -64,12 +67,14 @@ module.exports = {
                               .setDescription(`You took **${amountTaken}** credits from <@${user.id}>`)
                         message.channel.send(robbed)
                         client.Credits.set(user.id, {
+                              ID: message.author.id,
                               Bank: client.Credits.get(user.id).Bank,
                               Wallet: client.Credits.get(user.id).Wallet - amountTaken,
                               lastUsed: client.Credits.get(user.id).lastUsed,
                               SecSys: client.Credits.get(user.id).SecSys
                         })
                         client.Credits.set(message.author.id, {
+                              ID: message.author.id,
                               Bank: client.Credits.get(user.id).Bank,
                               Wallet: client.Credits.get(message.author.id).Wallet + amountTaken,
                               lastUsed: client.Credits.get(user.id).lastUsed,
