@@ -29,10 +29,6 @@ module.exports = async (client) => {
                   })
             })
       })
-      setInterval(() => {
-      const userCMDS = client.triggers.filter(trig => trig.Options.Dev === false)
-      client.commandOfTheHour = user.CMDS.random();
-      }, 3600000)
-      
+
       Write('I\'m online!', 0)
 }
