@@ -28,7 +28,7 @@ module.exports = {
         var data = res.body.data.children[random].data
         console.log(data)
         const embed = new RichEmbed()
-          .setDescription(data.title)
+          .setDescription(data.selftext)
           .setURL(`http://reddit.com${data.permalink}`)
           .setFooter(`${data.ups} ⬆ \|| ${data.downs} ⬇`)
           .setColor('RED')
