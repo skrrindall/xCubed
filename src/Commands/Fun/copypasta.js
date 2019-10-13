@@ -26,6 +26,7 @@ module.exports = {
       if (!err && res.ok) {
         var random = Math.floor(Math.random() * (75 - 2 + 1) + 1)
         var data = res.body.data.children[random].data
+        console.log(data)
         const embed = new RichEmbed()
           .setDescription(data.title)
           .setURL(`http://reddit.com${data.permalink}`)
