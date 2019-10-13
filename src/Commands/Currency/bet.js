@@ -23,6 +23,7 @@ module.exports = {
   },
   Run: async (client, message, paramaters) => {
     client.Credits.ensure(message.author.id, {
+      ID: message.author.id,
       Wallet: 500,
       lastUsed: null,
       Bank: 0,
@@ -46,6 +47,7 @@ module.exports = {
         .setFooter('If the number is even you win, If the number is odd you lose!')
       message.channel.send(embed)
       client.Credits.set(message.author.id, {
+        ID: message.author.id,
         Wallet: (client.Credits.get(message.author.id).Wallet - bet) + (bet * 2),
         Bank: client.Credits.get(message.author.id).Bank,
         lastUsed: client.Credits.get(message.author.id).lastUsed,
@@ -60,6 +62,7 @@ module.exports = {
         .setFooter('If the number is even you win, If the number is odd you lose!')
       message.channel.send(embed)
       client.Credits.set(message.author.id, {
+        ID: message.author.id,
         Wallet: client.Credits.get(message.author.id).Wallet - (bet),
         Bank: client.Credits.get(message.author.id).Bank,
         lastUsed: client.Credits.get(message.author.id).lastUsed,
