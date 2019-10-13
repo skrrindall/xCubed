@@ -20,7 +20,7 @@ module.exports = {
   },
   Run: async (client, message, paramaters) => {
     const req = require('superagent')
-    req.get('https://www.reddit.com/r/copypasta.json').query({
+    req.get('https://www.reddit.com/r/copypasta/top/.json').query({
       limit: 75
     }).set('User-Agent', 'showerthoughts-cli').end((err, res) => {
       if (!err && res.ok) {
@@ -28,7 +28,6 @@ module.exports = {
         var data = res.body.data.children[random].data
         const embed = new RichEmbed()
           .setDescription(data.title)
-          .setImage(data.url)
           .setURL(`http://reddit.com${data.permalink}`)
           .setFooter(`${data.ups} ⬆ \|| ${data.downs} ⬇`)
           .setColor('RED')
