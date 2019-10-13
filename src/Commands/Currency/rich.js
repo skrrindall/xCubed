@@ -23,7 +23,7 @@ module.exports = {
         const Embed = new RichEmbed()
         .setColor('RED')
               for(const data of top5) {
-        if(data.user === top5[0].id) {
+        if(data.ID === top5[0].ID) {
           Embed.addField(`🏆 ${client.users.get(data.ID).tag}`, `${data.Wallet} Credits`);
         } else {
         Embed.addField(client.users.get(data.ID).tag, `${data.Wallet} Credits`);
