@@ -24,12 +24,14 @@ module.exports = {
       Run: async (client, message, paramaters) => {
             const user = message.mentions.members.first()
             client.Credits.ensure(user.id, {
+                  ID: message.author.id,
                   Wallet: 500,
                   lastUsed: null,
                   Bank: 0,
                   SecSys: false
             })
             client.Credits.ensure(message.author.id, {
+                  ID: message.author.id,
                   Wallet: 500,
                   lastUsed: null,
                   Bank: 0,
@@ -63,6 +65,7 @@ module.exports = {
                   return
             } else {
                   client.Credits.ensure(user.id, {
+                        ID: message.author.id,
                         Wallet: 500,
                         Bank: 0,
                         lastUsed: null,
@@ -76,12 +79,14 @@ module.exports = {
                         .addField('Amount', `**${amount}**`, true)
                   message.channel.send(payment)
                   client.Credits.set(user.id, {
+                        ID: message.author.id,
                         Bank: client.Credits.get(user.id).Bank,
                         Wallet: client.Credits.get(user.id).Wallet + Math.floor(amount),
                         lastUsed: client.Credits.get(user.id).lastUsed,
                         SecSys: client.Credits.get(user.id).SecSys
                   })
                   client.Credits.set(message.author.id, {
+                        ID: message.author.id,
                         Bank: client.Credits.get(message.author.id).Bank,
                         Wallet: client.Credits.get(message.author.id).Wallet - amount,
                         lastUsed: client.Credits.get(message.author.id).lastUsed,
