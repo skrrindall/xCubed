@@ -1,3 +1,4 @@
+const { RichEmbed } = require('discord.js');
 module.exports = {
     Triggers: ['rich', 'moneylb', 'richleaderboard', 'richest', 'richs'],
     Description: 'See whos the richest of all!',
@@ -20,6 +21,10 @@ module.exports = {
     const sort = filtered.sort((a, b) => b.Wallet - a.Wallet)
     const top5 = sort.splice(0, 5)
     console.log(top5)
+        const Embed = new RichEmbed()
+        .setColor('RED')
+        .addField(`🏆 ${message.guild.members.get(top[0].ID).user.tag}`, `${top5[0].Wallet} Credits`)
+        message.channel.send(Embed)
     }
   }
 
