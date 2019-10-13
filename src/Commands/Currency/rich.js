@@ -26,8 +26,16 @@ module.exports = {
         if(top5[0]) {
         Embed.addField(`🏆 ${message.guild.members.get(top5[0].ID).user.tag}`, `${top5[0].Wallet} Credits`)
         message.channel.send(Embed)
-        }
-         if(top5[1]) {
+        } else if(top5[1]) {
+        Embed.addField(`${message.guild.members.get(top5[0].ID).user.tag}`, `${top5[0].Wallet} Credits`)
+        message.channel.send(Embed)
+        } else if(top5[2]) {
+        Embed.addField(`${message.guild.members.get(top5[0].ID).user.tag}`, `${top5[0].Wallet} Credits`)
+        message.channel.send(Embed)
+        } else if(top5[3]) {
+        Embed.addField(`${message.guild.members.get(top5[0].ID).user.tag}`, `${top5[0].Wallet} Credits`)
+        message.channel.send(Embed)
+        } else if(top5[4]) {
         Embed.addField(`${message.guild.members.get(top5[0].ID).user.tag}`, `${top5[0].Wallet} Credits`)
         message.channel.send(Embed)
         }
