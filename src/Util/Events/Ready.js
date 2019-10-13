@@ -29,5 +29,9 @@ module.exports = async (client) => {
                   })
             })
       })
+      setInterval(() => {
+      client.commandOfTheHour = client.commands.random()
+      }, 3600000)
+      
       Write('I\'m online!', 0)
 }
