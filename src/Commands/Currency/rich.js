@@ -28,6 +28,7 @@ module.exports = {
         } else {
         Embed.addField(client.users.get(data.ID).tag, `${data.Wallet} Credits`);
       }}
+        message.channel.send(Embed);
   }
 
 }
