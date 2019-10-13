@@ -20,7 +20,7 @@ module.exports = {
   },
   Run: async (client, message, paramaters) => {
     const req = require('superagent')
-    req.get('https://www.reddit.com/r/copypasta/top/.json').query({
+    req.get('https://www.reddit.com/r/copypasta/top/.json?sort=top&t=week&limit=500').query({
       limit: 75
     }).set('User-Agent', 'showerthoughts-cli').end((err, res) => {
       if (!err && res.ok) {
