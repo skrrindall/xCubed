@@ -1,3 +1,6 @@
+const {
+  NoArguments
+} = require('../../Configurations/Errors')
 module.exports = {
     Triggers: ['clap'],
     Description: 'Clap to your hearts content',
@@ -17,7 +20,7 @@ module.exports = {
     },
     Run: async (client, message, paramaters) => {
         if(!paramaters[0]) {
-        message.channel.send(require('../../Configurations/Erorrs.json').NoArguments)      
+        message.channel.send(NoArguments)      
         } else {
        message.channel.send(paramaters.join(' 👏 '))
     }}
