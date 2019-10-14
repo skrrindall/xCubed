@@ -21,11 +21,17 @@ module.exports = {
         const Embed = new RichEmbed()
         .setColor('RED')
         .setTitle(`${user.user.tag}'s Profile!`)
-        .addField('Wallet', client.Credits.get(user.id).Wallet)
-        .addField('Bank', client.Credits.get(user.id).Bank)
+        .addField('💰 Wallet', client.Credits.get(user.id).Wallet)
+        .addField('🏦 Bank', client.Credits.get(user.id).Bank)
         if(client.PP.has(user.id)) {
-        Embed.addField('PP', client.PP.get(user.id).size)
+        Embed.addField('PP', `${client.PP.get(user.id).size} inches`)
         }
+         if(client.HowGay.has(user.id)) {
+        Embed.addField('Gayness', `${client.HowGay.get(user.id)}%`)
+        }
+                 if(client.DankRate.has(user.id)) {
+        Embed.addField('👌 Dankness', `${client.DankRate.get(user.id)}%`)
+        } 
         message.channel.send(Embed)
     }
     }
