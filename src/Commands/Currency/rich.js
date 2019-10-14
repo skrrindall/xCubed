@@ -25,7 +25,7 @@ module.exports = {
               for(const data of top5) {
         if(data.ID === top5[0].ID) {
           Embed.addField(`🏆 ${client.users.get(data.ID).tag}`, `${data.Wallet} Credits`);
-        } else if(!data.Wallet === 0){
+        } else {
         Embed.addField(client.users.get(data.ID).tag, `${data.Wallet} Credits`);
       }}
         message.channel.send(Embed);
