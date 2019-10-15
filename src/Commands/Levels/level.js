@@ -32,7 +32,7 @@ module.exports = {
    .setColor("#7289DA")
    .addRect(0, 0, 934, 282)
     }
-    const buffer = await createCard(message.member, client.points.get(user.id));
+    const buffer = await createCard(message.member, client.Points.get(user.id));
     const attachment = new Attachment(buffer, 'card.jpg');
     await message.channel.send(attachment);
   }
