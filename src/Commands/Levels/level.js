@@ -28,7 +28,8 @@ module.exports = {
       .addField('Points', `${client.Points.get(user.id).points}/${(client.Points.get(user.id).level + 1) * 100}xp`, true)
     message.channel.send(Embed)
     function createCard(member, data) {
-   return new Canvas(934, 282)
+   const canvas = Canvas.createCanvas(934, 282)
+     const ctx = canvas.getContext('2d');
    .setColor("#7289DA")
    .addRect(0, 0, 934, 282)
     }
