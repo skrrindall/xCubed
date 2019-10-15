@@ -1,9 +1,9 @@
 const {
 	RichEmbed
 } = require('discord.js')
-const { region, verification } = require('../../Util/Functions/guildInfo.js')
+const { region, verification, checkDays } = require('../../Util/Functions/guildInfo.js')
 module.exports = {
-	Triggers: ['guildinfo', 'serverinfo'],
+	Triggers: ['guildinfo', 'serverinfo', 'gi'],
 	Description: 'View the servers information',
 	Category: 'information',
 	Usage: '{c}',
@@ -26,13 +26,6 @@ module.exports = {
 		} else {
 			afkChannel = `<#${afkChannel.id}>`
 		}
-
-		function checkDays(date) {
-			let now = new Date();
-			let diff = now.getTime() - date.getTime();
-			let days = Math.floor(diff / 86400000);
-			return days + (days == 1 ? " day" : " days") + " ago";
-		};
 		const embed = new RichEmbed()
 		.setColor('RED')
 		.setAuthor(message.guild.name, message.guild.iconURL)
