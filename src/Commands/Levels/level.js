@@ -24,7 +24,7 @@ module.exports = {
       .setColor('RED')
       .setTitle(`${user.user.tag}'s points!`)
       .addField('Level', client.Points.get(user.id).level, true)
-      .addField('Points', client.Points.get(user.id).points, true)
+      .addField('Points', `${client.Points.get(user.id).points}xp/${client.Points.get(user.id).level + 1 * 100}xp`, true)
     message.channel.send(Embed)
 
   }
