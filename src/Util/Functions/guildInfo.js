@@ -45,8 +45,16 @@ const verification = (verif) => {
 		}
   return verif
 }
+const checkDays = (date) => {
+			let now = new Date();
+			let diff = now.getTime() - date.getTime();
+			let days = Math.floor(diff / 86400000);
+			return days + (days == 1 ? " day" : " days") + " ago";
+}
+
 
 module.exports = {
   verification,
-  region
+  region,
+  checkDays
 }
