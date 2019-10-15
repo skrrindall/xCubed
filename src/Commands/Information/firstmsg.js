@@ -18,7 +18,7 @@ module.exports = {
       },
     },
     Run: async (client, message, paramaters) => {
-    const messages = await message.channel.messages.fetch({ after: 1, limit: 1 });
+    const messages = await message.channel.fetchMessages({ after: 1, limit: 1 });
     const msg = messages.first();
        const embed = new RichEmbed()
        .setColor('RED')
