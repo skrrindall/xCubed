@@ -29,7 +29,7 @@ module.exports = {
     message.channel.send(Embed)
     function createCard(member, data) {
    const canvas = Canvas.createCanvas(934, 282)
-     const ctx = canvas.getContext('2d');
+     const ctx = canvas.getContext('2d')
    .setColor("#7289DA")
    .addRect(0, 0, 934, 282)
     }
