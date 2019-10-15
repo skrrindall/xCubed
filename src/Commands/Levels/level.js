@@ -28,14 +28,5 @@ module.exports = {
             .addField('Points', `${client.Points.get(user.id).points}/${(client.Points.get(user.id).level + 1) * 100}xp`, true)
         message.channel.send(Embed)
 
-        function createCard(member, data) {
-            const canvas = Canvas.createCanvas(934, 282)
-            const ctx = canvas.getContext('2d')
-            ctx.setColor("#7289DA")
-            ctx.addRect(0, 0, 934, 282)
-        }
-        const buffer = await createCard(message.member, client.Points.get(user.id));
-        const attachment = new Attachment(buffer, 'card.jpg');
-        await message.channel.send(attachment);
     }
 }
