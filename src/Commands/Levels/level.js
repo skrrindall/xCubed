@@ -1,7 +1,7 @@
 const {
   RichEmbed
 } = require('discord.js')
-const Canvas = require('canvas');
+const { Canvas } = require('canvas');
 module.exports = {
   Triggers: ['level', 'rank', 'points', 'lvl'],
   Description: 'See how many points you have',
