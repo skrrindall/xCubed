@@ -26,15 +26,15 @@ module.exports = {
         if(userChoice === botChoice) {
           const embed = new RichEmbed()
           .setTitle('You win!')
-          .addField('I choose:', botChoice, true)
-          .addField('You choose:', userChoice, true)
+          .addField('I choose', botChoice, true)
+          .addField('You choose', userChoice, true)
           .setColor('RED')
           message.channel.send(embed)
         } else if(userChoice !== botChoice) {
                     const embed = new RichEmbed()
           .setTitle('You lose!')
-          .addField('I choose:', botChoice, true)
-          .addField('You choose:', userChoice, true)
+          .addField('I choose', botChoice, true)
+          .addField('You choose', userChoice, true)
           .setColor('RED')
           message.channel.send(embed)
         }
