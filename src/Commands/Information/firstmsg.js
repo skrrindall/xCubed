@@ -19,12 +19,12 @@ module.exports = {
     },
     Run: async (client, message, paramaters) => {
     const messages = await channel.messages.fetch({ after: 1, limit: 1 });
-    const message = messages.first();
+    const msg = messages.first();
        const embed = new RichEmbed()
        .setColor('RED')
-       .setTitle(`Message sent by: ${message.author.tag}`)
-       .setDescription(message.content)
-       .setFooter(`Sent ${checkDays(message.createdTimestamp())} days ago`)
+       .setTitle(`Message sent by: ${msg.author.tag}`)
+       .setDescription(msg.content)
+       .setFooter(`Sent ${checkDays(msg.createdTimestamp())} days ago`)
        message.channel.send(embed)
        
     }
