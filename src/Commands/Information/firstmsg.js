@@ -1,5 +1,5 @@
 const { RichEmbed } = require('discord.js')
-const { checkDays } = require('../../Util/Functions/guildInfo.js')
+
 module.exports = {
     Triggers: ['firstmsg', 'firstmessage'],
     Description: 'See what the first message sent in the channel is',
@@ -20,11 +20,12 @@ module.exports = {
     Run: async (client, message, paramaters) => {
     const messages = await message.channel.fetchMessages({ after: 1, limit: 1 });
     const msg = messages.first();
+        const createdAtDate = msg.createdAt.toString().split('GMT')[0]
        const embed = new RichEmbed()
        .setColor('RED')
        .setTitle(`Message sent by: ${msg.author.tag}`)
        .setDescription(msg.content)
-       .setFooter(`Sent ${checkDays(msg.createdTimestamp)} days ago`)
+       .setFooter(`Sent on ${createdAtDate}`)
        message.channel.send(embed)
        
     }
