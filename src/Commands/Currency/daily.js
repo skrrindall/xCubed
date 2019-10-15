@@ -8,7 +8,7 @@ module.exports = {
       Usage: '{c}',
       Permissions: {
             User: [],
-            Bot: ['SEND_MESSAGES']
+            Bot: ['EMBED_LINKS', 'SEND_MESSAGES']
       },
       Options: {
             Dev: false,
