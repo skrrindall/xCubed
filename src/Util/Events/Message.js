@@ -3,27 +3,36 @@ const {
   owner,
   prefix
 } = require('../../Configurations/Config.json')
-// Require just 
+// Require just the RichEmbed constructor instead of the entire Discord.js module
 const {
   RichEmbed
 } = require('discord.js')
+// This is a set that users will be added to and deleted from to prevent XP farming
 const NoXP4U = new Set();
+// This is a set that users will be added to and deleted from to prevent command spamming
 const NoCMD = new Set()
 module.exports = (message) => {
+  // This makes the bot only respond to normal user accounts
   if (message.author.bot) return
+  // If the bot is sent a DM and the DM starts with the bots prefix it tells you to use comands in guilds only
   if (message.channel.type === 'dm' && message.content.startsWith(prefix.toLowerCase())) {
     return message.channel.send('Hey! Please only use my commands in servers.')
   }
+  // Define cliennt
   const client = message.client;
+  // Define key as message.author.id for the database
   const key = message.author.id
+  // This is for the bots custom prefix feature. We save the default prefix in the database if the guild is not saved
   client.Prefix.ensure(message.guild.id, {
     prefix: prefix
   });
+  // This ensures that every user has a Points object, if they are missing this then the bot will error and die
   client.Points.ensure(key, {
     user: message.author.id,
     points: 0,
     level: 0,
   })
+  // This is to make sure that the user has a Credits system for their account. This is not needed but i like to have it so that it wont cause any errors on a currency command
   client.Credits.ensure(key, {
     ID: key,
     Wallet: 500,
@@ -31,8 +40,10 @@ module.exports = (message) => {
     Bank: 0,
     SecSys: false
   })
+  // This is how i calculate levels, it is quite easy but i like it
   let currentLevel = Math.floor(client.Points.get(message.author.id).points / 100)
-  if (Number(currentLevel) >= 99) currentLevel = 99
+  // This is for the XP timeout
+  // If the Set(); does not have a users ID then it adds XP to the users account and then adds them to the Set(), after that it sets a timeout using setTimeout() that removes them from the Set after X seconds
   if (!NoXP4U.has(message.author.id)) {
     NoXP4U.add(message.author.id)
     client.Points.set(key, {
@@ -44,8 +55,11 @@ module.exports = (message) => {
       NoXP4U.delete(message.author.id)
     }, 15000)
   }
+  // If the message does not start with the bots prefix then we ignore the message. No need to go through all of this message processing for no reason
   if (!message.content.startsWith(client.Prefix.get(message.guild.id).prefix.toLowerCase())) return;
+  // This is the first part of the message without the prefix and it only leaves the command trigger
   const Command = message.content.split(" ")[0].slice(client.Prefix.get(message.guild.id).prefix.length).toLowerCase();
+  // This removes the first part of the message entirley and leaves us with an array of paramaters
   const Paramaters = message.content.split(" ").slice(1)
   if (client.triggers.has(Command)) {
     const CMD = client.triggers.get(Command)
