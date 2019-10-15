@@ -1,7 +1,9 @@
+// This grabs the owner array and the prefix string from ./src/Configurations/Config.json
 const {
   owner,
   prefix
 } = require('../../Configurations/Config.json')
+// Require just 
 const {
   RichEmbed
 } = require('discord.js')
