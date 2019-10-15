@@ -25,7 +25,7 @@ module.exports = {
        .setColor('RED')
        .setTitle(`Message sent by: ${msg.author.tag}`)
        .setDescription(msg.content)
-       .setFooter(`Sent ${checkDays(msg.createdAt)} days ago`)
+       .setFooter(`Sent ${checkDays(msg.createdAt)}`)
        message.channel.send(embed)
        
     }
