@@ -61,8 +61,11 @@ module.exports = (message) => {
   const Command = message.content.split(" ")[0].slice(client.Prefix.get(message.guild.id).prefix.length).toLowerCase();
   // This removes the first part of the message entirley and leaves us with an array of paramaters
   const Paramaters = message.content.split(" ").slice(1)
+  // Check if the trigger exists in client.triggers
   if (client.triggers.has(Command)) {
+    // If the trigger does exist then we grab it from client.triggers and save it under the `CMD` variable
     const CMD = client.triggers.get(Command)
+    // This is where we check user permissions and bot permissions. Also checks if the channel is NSFW and if the user is the owner of the bot
     if (!CMD.Permissions.User.every(Permission => message.member.hasPermission(Permission))) {
       message.channel.send('You do not have the correct permissions to use that!')
     } else if (!CMD.Permissions.Bot.every(Permission => message.guild.me.hasPermission(Permission))) {
@@ -72,23 +75,25 @@ module.exports = (message) => {
     } else if (CMD.Options.NSFW === true && message.channel.nsfw === false) {
       return message.channel.send('You can\'t use **__NSFW__** commands outside of an NSFW channel')
     } else {
+      // This is for the command cooldown
       if (!NoCMD.has(message.author.id)) {
         if (!owner.includes(message.author.id)) {
           NoCMD.add(message.author.id)
         }
-        //  if(!owners.includes(message.author.id)) {
         setTimeout(() => {
           NoCMD.delete(message.author.id)
         }, 3000)
-        // }
+        // Increment client.commandsUsed so that it shows +1
         client.commandsUsed++;
         try {
+          // Run the command
           CMD.Run(client, message, Paramaters)
         } catch(e) {
           message.channel.send('It looks like there was an error! Try again later.')
           console.error(e)
         }
         } else {
+          // If the user is still in the Set() for the command cooldown then it will send an embed saying there is an X second cooldown
           client.commandsUsed++;
         const Embed = new RichEmbed()
           .setTitle('Woah! There\'s a cooldown for that.')
