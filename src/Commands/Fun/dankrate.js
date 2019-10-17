@@ -19,10 +19,11 @@ module.exports = {
     },
   },
   Run: async (client, message, paramaters) => {
-    client.DankRate.ensure(message.author.id, Math.floor(Math.random() * 100))
+  const user = message.mentions.members.first() || message.member
+    client.DankRate.ensure(user.user.id, Math.floor(Math.random() * 100))
     const DankRate = new RichEmbed()
-      .setTitle('You are...')
-      .setDescription(`${client.DankRate.get(message.author.id)}% dank!`)
+      .setTitle(`${user.user.tag} is`)
+      .setDescription(`${client.DankRate.get(user.user.id)}% dank!`)
       .setColor('RED')
     message.channel.send(DankRate)
   }
